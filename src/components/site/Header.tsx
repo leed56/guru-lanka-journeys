@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-import logo from "@/assets/am-logo.jpg.asset.json";
+import logo from "@/assets/am-logo.png";
 import { BRAND, NAV } from "@/data/site";
 
 export function Header() {
@@ -12,9 +12,14 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur">
       <div className="section-x grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 md:flex md:justify-between">
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt={`${BRAND.name} logo`} className="h-12 w-auto shrink-0 md:h-16" />
+          <img
+            src={logo}
+            alt={`${BRAND.name} logo`}
+            className="h-20 w-auto max-w-[260px] shrink-0 object-contain drop-shadow md:h-24"
+          />
           <span className="sr-only">{BRAND.name}</span>
         </Link>
+
 
         <nav className="hidden items-center gap-1 md:flex">
           {NAV.map((item) => (
