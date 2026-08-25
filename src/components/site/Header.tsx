@@ -15,7 +15,7 @@ export function Header() {
           <img
             src={logo}
             alt={`${BRAND.name} logo`}
-            className="h-16 w-auto max-w-[220px] shrink-0 object-contain drop-shadow-sm md:h-20"
+            className="h-20 w-auto max-w-[260px] shrink-0 object-contain drop-shadow md:h-24"
           />
           <span className="sr-only">{BRAND.name}</span>
         </Link>
