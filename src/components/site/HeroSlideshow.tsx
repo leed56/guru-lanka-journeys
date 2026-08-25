@@ -6,15 +6,28 @@ import temple from "@/assets/Kataragama_murugan_tamil_Temple.jpg.asset.json";
 import sigiriya from "@/assets/Sigiriya_Rock.jpg.asset.json";
 import tea from "@/assets/Tea_Plantations.jpg.asset.json";
 import wildlife from "@/assets/Wildlife.jpg.asset.json";
+import waterfall from "@/assets/thushal-madhushankha-Wak57_M4JKM-unsplash.jpg.asset.json";
+import poolVilla from "@/assets/chaminda-keragala-Hp2LhkqyHww-unsplash.jpg.asset.json";
+import peacock from "@/assets/adithya-ramakrishnan-OIhMCWgOYo4-unsplash.jpg.asset.json";
+import buddhas from "@/assets/bharath-reddy-KxHf3b7YCPk-unsplash.jpg.asset.json";
+import train from "@/assets/gemmmm-BS8a67PahbM-unsplash.jpg.asset.json";
+import street from "@/assets/alex-azabache-8weolGgaa9w-unsplash.jpg.asset.json";
 
 export const HERO_SLIDES = [
   { url: galle.url, alt: "Stilt fishermen and Galle Fort lighthouse on a Sri Lankan beach" },
+  { url: train.url, alt: "Blue train crossing the Nine Arch Bridge in Ella" },
   { url: tea.url, alt: "Tea pluckers in the hill country tea plantations of Sri Lanka" },
+  { url: waterfall.url, alt: "Devon Falls tumbling through misty hill-country tea estates" },
   { url: sigiriya.url, alt: "Sigiriya rock fortress rising above the jungle" },
   { url: wildlife.url, alt: "Elephants and deer at a waterhole in a Sri Lankan national park" },
+  { url: peacock.url, alt: "Wild peacock calling from a fallen branch in a national park" },
   { url: temple.url, alt: "Evening ceremony at Kataragama Murugan temple" },
+  { url: buddhas.url, alt: "Row of seated stone Buddha statues at a Sri Lankan temple" },
+  { url: street.url, alt: "Busy Pettah market street in Colombo" },
+  { url: poolVilla.url, alt: "Infinity pool villa overlooking the Indian Ocean" },
   { url: ayurveda.url, alt: "Ayurvedic oil treatment in a garden pavilion" },
 ];
+
 
 /** Slow, gentle crossfade + ken-burns drift between hero photographs. */
 export function HeroSlideshow() {
