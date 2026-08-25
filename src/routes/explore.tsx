@@ -130,6 +130,9 @@ function Explore() {
                   tabIndex={0}
                   onKeyDown={(e) => e.key === "Enter" && setSelected(d.id)}
                 >
+                  {(active || isSelected) && !(interest && !active) ? (
+                    <circle cx={d.x} cy={d.y} r={12} className="soft-pulse fill-spice-gold/25" />
+                  ) : null}
                   <circle
                     cx={d.x}
                     cy={d.y}
@@ -141,6 +144,7 @@ function Explore() {
                     )}
                     strokeWidth={2}
                   />
+
                   <text
                     x={d.x + 12}
                     y={d.y + 4}
