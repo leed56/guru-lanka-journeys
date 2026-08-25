@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
@@ -130,6 +130,9 @@ function Explore() {
                   tabIndex={0}
                   onKeyDown={(e) => e.key === "Enter" && setSelected(d.id)}
                 >
+                  {(active || isSelected) && !(interest && !active) ? (
+                    <circle cx={d.x} cy={d.y} r={12} className="soft-pulse fill-spice-gold/25" />
+                  ) : null}
                   <circle
                     cx={d.x}
                     cy={d.y}
@@ -141,6 +144,7 @@ function Explore() {
                     )}
                     strokeWidth={2}
                   />
+
                   <text
                     x={d.x + 12}
                     y={d.y + 4}
@@ -170,6 +174,37 @@ function Explore() {
                   </button>
                 </div>
                 <p className="type-body mt-4 text-muted-foreground">{detail.blurb}</p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {detail.interests.map((id) => {
+                    const meta = INTERESTS.find((x) => x.id === id);
+                    if (!meta) return null;
+                    return (
+                      <button
+                        key={id}
+                        type="button"
+                        onClick={() => pick(id)}
+                        className={cn("chip", interest === id && "chip-active")}
+                      >
+                        {meta.label}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
+                    to="/journey"
+                    search={detail.interests[0] ? { interest: detail.interests[0] } : {}}
+                    className="btn-gold"
+                  >
+                    Build a trip around this
+                  </Link>
+                  <Link to="/contact" search={{ tag: detail.name }} className="btn-outline text-ocean-teal">
+                    Ask about {detail.name}
+                  </Link>
+                </div>
+
               </div>
             </div>
           ) : (

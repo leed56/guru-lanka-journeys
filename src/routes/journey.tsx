@@ -139,17 +139,27 @@ function Journey() {
     <div className="min-h-[80vh] bg-sand-cream py-14 md:py-20">
       <div className="section-x max-w-3xl">
         {/* progress */}
-        <div className="flex items-center gap-2">
-          {steps.map((_, i) => (
-            <span
-              key={i}
-              className={cn(
-                "h-1.5 flex-1 rounded-full transition-colors duration-500",
-                i < step || isResult ? "bg-spice-gold" : "bg-sand-shade",
-              )}
-            />
-          ))}
+        <div className="flex items-center justify-center gap-2.5" role="list" aria-label="Progress">
+          {steps.map((s, i) => {
+            const done = i < step || isResult;
+            return (
+              <button
+                key={s.q}
+                type="button"
+                role="listitem"
+                aria-label={s.q}
+                aria-current={!isResult && i === step ? "step" : undefined}
+                onClick={() => i <= step && setStep(i)}
+                className={cn(
+                  "size-2.5 rounded-full transition-all duration-500",
+                  done ? "bg-spice-gold" : "bg-sand-shade",
+                  !isResult && i === step && "w-7 bg-ocean-teal",
+                )}
+              />
+            );
+          })}
         </div>
+
 
         <div className="mt-6 flex items-center justify-between">
           {step > 0 ? (
