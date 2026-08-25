@@ -99,8 +99,9 @@ function Explore() {
 
       <div className="section-x grid gap-8 pb-20 lg:grid-cols-[1.5fr_1fr] lg:items-start">
         {/* MAP */}
-        <div className="relative -ml-4 w-[calc(100%+2rem)] lg:-ml-12 lg:w-[calc(100%+3rem)]">
+        <div className="relative mx-auto w-full max-w-[440px]">
           <svg viewBox="0 0 400 720" className="h-auto w-full" role="img" aria-label="Map of Sri Lanka with destination pins">
+
             <path d={ISLAND_PATH} className="fill-ocean-teal-deep stroke-sand-cream/25" strokeWidth={2} />
             <path d={ISLAND_PATH} className="fill-none stroke-tea-green/40" strokeWidth={12} />
 
