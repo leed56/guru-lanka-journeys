@@ -14,6 +14,7 @@ import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as TripsRouteImport } from './routes/trips'
 import { Route as DiscoverSlugRouteImport } from './routes/discover.$slug'
+import { Route as TripsSlugRouteImport } from './routes/trips.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,42 +41,69 @@ const DiscoverSlugRoute = DiscoverSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => DiscoverRoute,
 } as any)
+const TripsSlugRoute = TripsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TripsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
-  '/trips': typeof TripsRoute
+  '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
+  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
-  '/trips': typeof TripsRoute
+  '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
+  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
-  '/trips': typeof TripsRoute
+  '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
+  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/discover' | '/explore' | '/trips' | '/discover/$slug'
+  fullPaths:
+    | '/'
+    | '/discover'
+    | '/explore'
+    | '/trips'
+    | '/discover/$slug'
+    | '/trips/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/discover' | '/explore' | '/trips' | '/discover/$slug'
-  id: '__root__' | '/' | '/discover' | '/explore' | '/trips' | '/discover/$slug'
+  to:
+    | '/'
+    | '/discover'
+    | '/explore'
+    | '/trips'
+    | '/discover/$slug'
+    | '/trips/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/discover'
+    | '/explore'
+    | '/trips'
+    | '/discover/$slug'
+    | '/trips/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
   ExploreRoute: typeof ExploreRoute
-  TripsRoute: typeof TripsRoute
+  TripsRoute: typeof TripsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -115,6 +143,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiscoverSlugRouteImport
       parentRoute: typeof DiscoverRoute
     }
+    '/trips/$slug': {
+      id: '/trips/$slug'
+      path: '/$slug'
+      fullPath: '/trips/$slug'
+      preLoaderRoute: typeof TripsSlugRouteImport
+      parentRoute: typeof TripsRoute
+    }
   }
 }
 
@@ -130,11 +165,21 @@ const DiscoverRouteWithChildren = DiscoverRoute._addFileChildren(
   DiscoverRouteChildren,
 )
 
+interface TripsRouteChildren {
+  TripsSlugRoute: typeof TripsSlugRoute
+}
+
+const TripsRouteChildren: TripsRouteChildren = {
+  TripsSlugRoute: TripsSlugRoute,
+}
+
+const TripsRouteWithChildren = TripsRoute._addFileChildren(TripsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
   ExploreRoute: ExploreRoute,
-  TripsRoute: TripsRoute,
+  TripsRoute: TripsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
