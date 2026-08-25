@@ -199,6 +199,24 @@
   }
 }
 
+@utility hero-slide {
+  opacity: 0;
+  transition: opacity 1.6s var(--ease-soft);
+  transform: scale(1.06);
+  &[data-active="true"] {
+    animation: hero-drift 8s var(--ease-soft) forwards;
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 @utility hover-lift {
   transition:
     transform 0.35s var(--ease-soft),
@@ -265,6 +283,11 @@
   .hero-fade {
     animation: none;
     opacity: 1;
+  }
+  .hero-slide {
+    transform: none;
+    animation: none !important;
+    transition: opacity 0.4s linear;
   }
   .route-draw {
     animation: none;
