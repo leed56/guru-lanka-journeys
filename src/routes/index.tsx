@@ -47,10 +47,8 @@ function Home() {
     <>
       {/* HERO */}
       <section className="relative isolate min-h-[88vh] overflow-hidden">
-        <div className="hero-fade absolute inset-0 -z-10 bg-ocean-teal">
-          <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(120%_80%_at_70%_20%,color-mix(in_oklab,var(--tea-green)_70%,transparent),transparent)]">
-            <span className="type-caption text-sand-cream/40">Placeholder hero photo / video</span>
-          </div>
+        <div className="hero-fade absolute inset-0 -z-10">
+          <HeroSlideshow />
         </div>
 
         <div className="section-x flex min-h-[88vh] flex-col justify-end pb-16 pt-24 text-sand-cream md:pb-24">
