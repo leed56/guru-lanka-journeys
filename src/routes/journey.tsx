@@ -5,13 +5,13 @@ import { useState } from "react";
 import { BRAND, COLLECTIONS, INTERESTS, estimateRange, routeForInterests, type Interest } from "@/data/site";
 import { cn } from "@/lib/utils";
 
-type Search = { interest?: Interest; days?: number; collection?: string };
+type Search = { interest?: Interest | undefined; days?: number | undefined; collection?: string | undefined };
 
 export const Route = createFileRoute("/journey")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    interest: typeof search.interest === "string" ? (search.interest as Interest) : undefined,
-    days: typeof search.days === "number" ? search.days : undefined,
-    collection: typeof search.collection === "string" ? search.collection : undefined,
+    interest: typeof search["interest"] === "string" ? (search["interest"] as Interest) : undefined,
+    days: typeof search["days"] === "number" ? (search["days"] as number) : undefined,
+    collection: typeof search["collection"] === "string" ? (search["collection"] as string) : undefined,
   }),
   head: () => ({
     meta: [

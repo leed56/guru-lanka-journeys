@@ -27,9 +27,9 @@ export function useReveal<T extends HTMLElement>() {
 
 type RevealProps = {
   children: ReactNode;
-  delay?: number;
-  className?: string;
-  as?: ElementType;
+  delay?: number | undefined;
+  className?: string | undefined;
+  as?: ElementType | undefined;
 };
 
 /** Fades + lifts content 16px into view once, staggered by `delay` ms. */

@@ -4,9 +4,9 @@ import { useState, type FormEvent } from "react";
 export type Field = {
   name: string;
   label: string;
-  type?: "text" | "email" | "tel" | "textarea" | "select";
-  options?: string[];
-  required?: boolean;
+  type?: "text" | "email" | "tel" | "textarea" | "select" | undefined;
+  options?: string[] | undefined;
+  required?: boolean | undefined;
 };
 
 /**
@@ -22,9 +22,9 @@ export function EnquiryForm({
   hiddenTag,
 }: {
   fields: Field[];
-  cta?: string;
-  confirmation?: string;
-  hiddenTag?: string;
+  cta?: string | undefined;
+  confirmation?: string | undefined;
+  hiddenTag?: string | undefined;
 }) {
   const [done, setDone] = useState(false);
 

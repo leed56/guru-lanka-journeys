@@ -6,8 +6,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { BRAND } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
-  validateSearch: (search: Record<string, unknown>): { tag?: string } => ({
-    tag: typeof search.tag === "string" ? search.tag : undefined,
+  validateSearch: (search: Record<string, unknown>): { tag?: string | undefined } => ({
+    tag: typeof search["tag"] === "string" ? (search["tag"] as string) : undefined,
   }),
   head: () => ({
     meta: [

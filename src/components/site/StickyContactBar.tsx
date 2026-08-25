@@ -4,7 +4,7 @@ import { MessageCircle, Phone, Send } from "lucide-react";
 import { BRAND } from "@/data/site";
 
 /** Slim mobile-only bar for content pages (trips, packages, destinations). */
-export function StickyContactBar({ tag }: { tag?: string }) {
+export function StickyContactBar({ tag }: { tag?: string | undefined }) {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-border bg-background/95 backdrop-blur md:hidden">
       <a href={`tel:${BRAND.phone.replace(/\s/g, "")}`} className="flex items-center justify-center gap-2 py-3 text-sm text-ocean-teal">

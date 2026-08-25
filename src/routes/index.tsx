@@ -92,7 +92,6 @@ function Home() {
               <Reveal
                 key={w.label}
                 delay={idx * 100}
-                className={idx < 2 ? "md:col-span-1 md:row-span-1" : undefined}
               >
                 <article className="card-surface hover-lift h-full">
                   <Placeholder label={w.label} ratio={idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} />

@@ -6,12 +6,12 @@ import { Placeholder } from "@/components/site/Placeholder";
 import { DESTINATIONS, INTERESTS, REGIONS, type Interest } from "@/data/site";
 import { cn } from "@/lib/utils";
 
-type Search = { interest?: Interest; place?: string };
+type Search = { interest?: Interest | undefined; place?: string | undefined };
 
 export const Route = createFileRoute("/explore")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    interest: typeof search.interest === "string" ? (search.interest as Interest) : undefined,
-    place: typeof search.place === "string" ? search.place : undefined,
+    interest: typeof search["interest"] === "string" ? (search["interest"] as Interest) : undefined,
+    place: typeof search["place"] === "string" ? (search["place"] as string) : undefined,
   }),
   head: () => ({
     meta: [
