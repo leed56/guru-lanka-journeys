@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as ForAgentsRouteImport } from './routes/for-agents'
+import { Route as ForPartnersRouteImport } from './routes/for-partners'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as TripsRouteImport } from './routes/trips'
 import { Route as DiscoverSlugRouteImport } from './routes/discover.$slug'
@@ -36,6 +37,11 @@ const ExploreRoute = ExploreRouteImport.update({
 const ForAgentsRoute = ForAgentsRouteImport.update({
   id: '/for-agents',
   path: '/for-agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForPartnersRoute = ForPartnersRouteImport.update({
+  id: '/for-partners',
+  path: '/for-partners',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PackagesRoute = PackagesRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
+  '/for-partners': typeof ForPartnersRoute
   '/packages': typeof PackagesRoute
   '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
+  '/for-partners': typeof ForPartnersRoute
   '/packages': typeof PackagesRoute
   '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
+  '/for-partners': typeof ForPartnersRoute
   '/packages': typeof PackagesRoute
   '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/discover'
     | '/explore'
     | '/for-agents'
+    | '/for-partners'
     | '/packages'
     | '/trips'
     | '/discover/$slug'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/discover'
     | '/explore'
     | '/for-agents'
+    | '/for-partners'
     | '/packages'
     | '/trips'
     | '/discover/$slug'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/discover'
     | '/explore'
     | '/for-agents'
+    | '/for-partners'
     | '/packages'
     | '/trips'
     | '/discover/$slug'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   DiscoverRoute: typeof DiscoverRouteWithChildren
   ExploreRoute: typeof ExploreRoute
   ForAgentsRoute: typeof ForAgentsRoute
+  ForPartnersRoute: typeof ForPartnersRoute
   PackagesRoute: typeof PackagesRoute
   TripsRoute: typeof TripsRouteWithChildren
 }
@@ -160,6 +173,13 @@ declare module '@tanstack/react-router' {
       path: '/for-agents'
       fullPath: '/for-agents'
       preLoaderRoute: typeof ForAgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-partners': {
+      id: '/for-partners'
+      path: '/for-partners'
+      fullPath: '/for-partners'
+      preLoaderRoute: typeof ForPartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/packages': {
@@ -220,6 +240,7 @@ const rootRouteChildren: RootRouteChildren = {
   DiscoverRoute: DiscoverRouteWithChildren,
   ExploreRoute: ExploreRoute,
   ForAgentsRoute: ForAgentsRoute,
+  ForPartnersRoute: ForPartnersRoute,
   PackagesRoute: PackagesRoute,
   TripsRoute: TripsRouteWithChildren,
 }
