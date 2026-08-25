@@ -284,6 +284,11 @@
     animation: none;
     opacity: 1;
   }
+  .hero-slide {
+    transform: none;
+    animation: none !important;
+    transition: opacity 0.4s linear;
+  }
   .route-draw {
     animation: none;
     stroke-dashoffset: 0;
