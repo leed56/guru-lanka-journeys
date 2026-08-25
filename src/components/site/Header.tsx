@@ -12,7 +12,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur">
       <div className="section-x grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 md:flex md:justify-between">
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
-          <img src={logo.url} alt={`${BRAND.name} logo`} className="h-9 w-auto shrink-0 md:h-11" />
+          <img src={logo.url} alt={`${BRAND.name} logo`} className="h-12 w-auto shrink-0 md:h-16" />
           <span className="sr-only">{BRAND.name}</span>
         </Link>
 
