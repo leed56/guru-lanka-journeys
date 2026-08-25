@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as ForAgentsRouteImport } from './routes/for-agents'
@@ -22,6 +23,11 @@ import { Route as TripsSlugRouteImport } from './routes/trips.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DiscoverRoute = DiscoverRouteImport.update({
@@ -67,6 +73,7 @@ const TripsSlugRoute = TripsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
@@ -90,6 +98,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
@@ -103,6 +112,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
     | '/discover'
     | '/explore'
     | '/for-agents'
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/contact'
     | '/discover'
     | '/explore'
     | '/for-agents'
@@ -125,6 +136,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/contact'
     | '/discover'
     | '/explore'
     | '/for-agents'
@@ -137,6 +149,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
   ExploreRoute: typeof ExploreRoute
   ForAgentsRoute: typeof ForAgentsRoute
@@ -152,6 +165,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/discover': {
@@ -237,6 +257,7 @@ const TripsRouteWithChildren = TripsRoute._addFileChildren(TripsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
   ExploreRoute: ExploreRoute,
   ForAgentsRoute: ForAgentsRoute,
