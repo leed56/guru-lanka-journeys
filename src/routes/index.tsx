@@ -1,6 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, MapPin } from "lucide-react";
 
+import { HeroSlideshow } from "@/components/site/HeroSlideshow";
 import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
 import { BRAND, COLLECTIONS, INTERESTS } from "@/data/site";
