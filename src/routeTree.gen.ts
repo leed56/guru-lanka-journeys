@@ -10,33 +10,178 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DiscoverRouteImport } from './routes/discover'
+import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as ForAgentsRouteImport } from './routes/for-agents'
+import { Route as ForPartnersRouteImport } from './routes/for-partners'
+import { Route as JourneyRouteImport } from './routes/journey'
+import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as StyleGuideRouteImport } from './routes/style-guide'
+import { Route as TripsRouteImport } from './routes/trips'
+import { Route as DiscoverSlugRouteImport } from './routes/discover.$slug'
+import { Route as TripsSlugRouteImport } from './routes/trips.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscoverRoute = DiscoverRouteImport.update({
+  id: '/discover',
+  path: '/discover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExploreRoute = ExploreRouteImport.update({
+  id: '/explore',
+  path: '/explore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForAgentsRoute = ForAgentsRouteImport.update({
+  id: '/for-agents',
+  path: '/for-agents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForPartnersRoute = ForPartnersRouteImport.update({
+  id: '/for-partners',
+  path: '/for-partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JourneyRoute = JourneyRouteImport.update({
+  id: '/journey',
+  path: '/journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackagesRoute = PackagesRouteImport.update({
+  id: '/packages',
+  path: '/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StyleGuideRoute = StyleGuideRouteImport.update({
+  id: '/style-guide',
+  path: '/style-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripsRoute = TripsRouteImport.update({
+  id: '/trips',
+  path: '/trips',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscoverSlugRoute = DiscoverSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => DiscoverRoute,
+} as any)
+const TripsSlugRoute = TripsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TripsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/discover': typeof DiscoverRouteWithChildren
+  '/explore': typeof ExploreRoute
+  '/for-agents': typeof ForAgentsRoute
+  '/for-partners': typeof ForPartnersRoute
+  '/journey': typeof JourneyRoute
+  '/packages': typeof PackagesRoute
+  '/style-guide': typeof StyleGuideRoute
+  '/trips': typeof TripsRouteWithChildren
+  '/discover/$slug': typeof DiscoverSlugRoute
+  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/discover': typeof DiscoverRouteWithChildren
+  '/explore': typeof ExploreRoute
+  '/for-agents': typeof ForAgentsRoute
+  '/for-partners': typeof ForPartnersRoute
+  '/journey': typeof JourneyRoute
+  '/packages': typeof PackagesRoute
+  '/style-guide': typeof StyleGuideRoute
+  '/trips': typeof TripsRouteWithChildren
+  '/discover/$slug': typeof DiscoverSlugRoute
+  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/discover': typeof DiscoverRouteWithChildren
+  '/explore': typeof ExploreRoute
+  '/for-agents': typeof ForAgentsRoute
+  '/for-partners': typeof ForPartnersRoute
+  '/journey': typeof JourneyRoute
+  '/packages': typeof PackagesRoute
+  '/style-guide': typeof StyleGuideRoute
+  '/trips': typeof TripsRouteWithChildren
+  '/discover/$slug': typeof DiscoverSlugRoute
+  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/discover'
+    | '/explore'
+    | '/for-agents'
+    | '/for-partners'
+    | '/journey'
+    | '/packages'
+    | '/style-guide'
+    | '/trips'
+    | '/discover/$slug'
+    | '/trips/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/discover'
+    | '/explore'
+    | '/for-agents'
+    | '/for-partners'
+    | '/journey'
+    | '/packages'
+    | '/style-guide'
+    | '/trips'
+    | '/discover/$slug'
+    | '/trips/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/discover'
+    | '/explore'
+    | '/for-agents'
+    | '/for-partners'
+    | '/journey'
+    | '/packages'
+    | '/style-guide'
+    | '/trips'
+    | '/discover/$slug'
+    | '/trips/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  DiscoverRoute: typeof DiscoverRouteWithChildren
+  ExploreRoute: typeof ExploreRoute
+  ForAgentsRoute: typeof ForAgentsRoute
+  ForPartnersRoute: typeof ForPartnersRoute
+  JourneyRoute: typeof JourneyRoute
+  PackagesRoute: typeof PackagesRoute
+  StyleGuideRoute: typeof StyleGuideRoute
+  TripsRoute: typeof TripsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +193,119 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discover': {
+      id: '/discover'
+      path: '/discover'
+      fullPath: '/discover'
+      preLoaderRoute: typeof DiscoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explore': {
+      id: '/explore'
+      path: '/explore'
+      fullPath: '/explore'
+      preLoaderRoute: typeof ExploreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-agents': {
+      id: '/for-agents'
+      path: '/for-agents'
+      fullPath: '/for-agents'
+      preLoaderRoute: typeof ForAgentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-partners': {
+      id: '/for-partners'
+      path: '/for-partners'
+      fullPath: '/for-partners'
+      preLoaderRoute: typeof ForPartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journey': {
+      id: '/journey'
+      path: '/journey'
+      fullPath: '/journey'
+      preLoaderRoute: typeof JourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/packages': {
+      id: '/packages'
+      path: '/packages'
+      fullPath: '/packages'
+      preLoaderRoute: typeof PackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/style-guide': {
+      id: '/style-guide'
+      path: '/style-guide'
+      fullPath: '/style-guide'
+      preLoaderRoute: typeof StyleGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips': {
+      id: '/trips'
+      path: '/trips'
+      fullPath: '/trips'
+      preLoaderRoute: typeof TripsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discover/$slug': {
+      id: '/discover/$slug'
+      path: '/$slug'
+      fullPath: '/discover/$slug'
+      preLoaderRoute: typeof DiscoverSlugRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
+    '/trips/$slug': {
+      id: '/trips/$slug'
+      path: '/$slug'
+      fullPath: '/trips/$slug'
+      preLoaderRoute: typeof TripsSlugRouteImport
+      parentRoute: typeof TripsRoute
+    }
   }
 }
 
+interface DiscoverRouteChildren {
+  DiscoverSlugRoute: typeof DiscoverSlugRoute
+}
+
+const DiscoverRouteChildren: DiscoverRouteChildren = {
+  DiscoverSlugRoute: DiscoverSlugRoute,
+}
+
+const DiscoverRouteWithChildren = DiscoverRoute._addFileChildren(
+  DiscoverRouteChildren,
+)
+
+interface TripsRouteChildren {
+  TripsSlugRoute: typeof TripsSlugRoute
+}
+
+const TripsRouteChildren: TripsRouteChildren = {
+  TripsSlugRoute: TripsSlugRoute,
+}
+
+const TripsRouteWithChildren = TripsRoute._addFileChildren(TripsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  DiscoverRoute: DiscoverRouteWithChildren,
+  ExploreRoute: ExploreRoute,
+  ForAgentsRoute: ForAgentsRoute,
+  ForPartnersRoute: ForPartnersRoute,
+  JourneyRoute: JourneyRoute,
+  PackagesRoute: PackagesRoute,
+  StyleGuideRoute: StyleGuideRoute,
+  TripsRoute: TripsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
