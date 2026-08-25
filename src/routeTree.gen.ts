@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DiscoverRouteImport } from './routes/discover'
+import { Route as DiscoverSlugRouteImport } from './routes/discover.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,39 @@ const DiscoverRoute = DiscoverRouteImport.update({
   path: '/discover',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DiscoverSlugRoute = DiscoverSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => DiscoverRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/discover': typeof DiscoverRoute
+  '/discover': typeof DiscoverRouteWithChildren
+  '/discover/$slug': typeof DiscoverSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/discover': typeof DiscoverRoute
+  '/discover': typeof DiscoverRouteWithChildren
+  '/discover/$slug': typeof DiscoverSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/discover': typeof DiscoverRoute
+  '/discover': typeof DiscoverRouteWithChildren
+  '/discover/$slug': typeof DiscoverSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/discover'
+  fullPaths: '/' | '/discover' | '/discover/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/discover'
-  id: '__root__' | '/' | '/discover'
+  to: '/' | '/discover' | '/discover/$slug'
+  id: '__root__' | '/' | '/discover' | '/discover/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  DiscoverRoute: typeof DiscoverRoute
+  DiscoverRoute: typeof DiscoverRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +74,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiscoverRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/discover/$slug': {
+      id: '/discover/$slug'
+      path: '/$slug'
+      fullPath: '/discover/$slug'
+      preLoaderRoute: typeof DiscoverSlugRouteImport
+      parentRoute: typeof DiscoverRoute
+    }
   }
 }
 
+interface DiscoverRouteChildren {
+  DiscoverSlugRoute: typeof DiscoverSlugRoute
+}
+
+const DiscoverRouteChildren: DiscoverRouteChildren = {
+  DiscoverSlugRoute: DiscoverSlugRoute,
+}
+
+const DiscoverRouteWithChildren = DiscoverRoute._addFileChildren(
+  DiscoverRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  DiscoverRoute: DiscoverRoute,
+  DiscoverRoute: DiscoverRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
