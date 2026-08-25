@@ -15,7 +15,7 @@ export function StickyContactBar({ tag }: { tag?: string | undefined }) {
       </a>
       <Link
         to="/contact"
-        search={tag ? { tag } : undefined}
+        search={{ ...(tag ? { tag } : {}) }}
         className="flex items-center justify-center gap-2 bg-spice-gold py-3 text-sm font-medium text-ink"
       >
         <Send className="size-4" /> Enquire
