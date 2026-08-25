@@ -17,6 +17,7 @@ import { Route as ForAgentsRouteImport } from './routes/for-agents'
 import { Route as ForPartnersRouteImport } from './routes/for-partners'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as StyleGuideRouteImport } from './routes/style-guide'
 import { Route as TripsRouteImport } from './routes/trips'
 import { Route as DiscoverSlugRouteImport } from './routes/discover.$slug'
 import { Route as TripsSlugRouteImport } from './routes/trips.$slug'
@@ -61,6 +62,11 @@ const PackagesRoute = PackagesRouteImport.update({
   path: '/packages',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StyleGuideRoute = StyleGuideRouteImport.update({
+  id: '/style-guide',
+  path: '/style-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TripsRoute = TripsRouteImport.update({
   id: '/trips',
   path: '/trips',
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/for-partners': typeof ForPartnersRoute
   '/journey': typeof JourneyRoute
   '/packages': typeof PackagesRoute
+  '/style-guide': typeof StyleGuideRoute
   '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
   '/trips/$slug': typeof TripsSlugRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/for-partners': typeof ForPartnersRoute
   '/journey': typeof JourneyRoute
   '/packages': typeof PackagesRoute
+  '/style-guide': typeof StyleGuideRoute
   '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
   '/trips/$slug': typeof TripsSlugRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/for-partners': typeof ForPartnersRoute
   '/journey': typeof JourneyRoute
   '/packages': typeof PackagesRoute
+  '/style-guide': typeof StyleGuideRoute
   '/trips': typeof TripsRouteWithChildren
   '/discover/$slug': typeof DiscoverSlugRoute
   '/trips/$slug': typeof TripsSlugRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/for-partners'
     | '/journey'
     | '/packages'
+    | '/style-guide'
     | '/trips'
     | '/discover/$slug'
     | '/trips/$slug'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/for-partners'
     | '/journey'
     | '/packages'
+    | '/style-guide'
     | '/trips'
     | '/discover/$slug'
     | '/trips/$slug'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/for-partners'
     | '/journey'
     | '/packages'
+    | '/style-guide'
     | '/trips'
     | '/discover/$slug'
     | '/trips/$slug'
@@ -168,6 +180,7 @@ export interface RootRouteChildren {
   ForPartnersRoute: typeof ForPartnersRoute
   JourneyRoute: typeof JourneyRoute
   PackagesRoute: typeof PackagesRoute
+  StyleGuideRoute: typeof StyleGuideRoute
   TripsRoute: typeof TripsRouteWithChildren
 }
 
@@ -229,6 +242,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PackagesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/style-guide': {
+      id: '/style-guide'
+      path: '/style-guide'
+      fullPath: '/style-guide'
+      preLoaderRoute: typeof StyleGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/trips': {
       id: '/trips'
       path: '/trips'
@@ -284,6 +304,7 @@ const rootRouteChildren: RootRouteChildren = {
   ForPartnersRoute: ForPartnersRoute,
   JourneyRoute: JourneyRoute,
   PackagesRoute: PackagesRoute,
+  StyleGuideRoute: StyleGuideRoute,
   TripsRoute: TripsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
