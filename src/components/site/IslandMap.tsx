@@ -35,7 +35,7 @@ const HOTSPOTS: Hotspot[] = [
 export function IslandMap({ className }: { className?: string }) {
   return (
     <div className={className}>
-      <div className="relative mx-auto w-full max-w-[560px]">
+      <div className="relative mx-auto w-full max-w-[560px] rounded-3xl bg-sand-cream/95 p-4 shadow-2xl ring-1 ring-ink/5">
         <img
           src={mapAsset.url}
           alt="Illustrated map of Sri Lanka showing highlights from Jaffna to Galle"
@@ -52,8 +52,9 @@ export function IslandMap({ className }: { className?: string }) {
             style={{ left: `${h.x}%`, top: `${h.y}%`, width: `${h.w}%`, height: `${h.h}%` }}
             className="group absolute flex items-center justify-center rounded-lg transition-all duration-200 hover:scale-[1.04] focus-visible:scale-[1.04] focus-visible:outline-none"
           >
-            <span className="max-w-full rounded-full border border-spice-gold/50 bg-ink/75 px-1.5 py-0.5 text-center text-[10px] font-semibold leading-tight text-sand-cream shadow-[0_2px_8px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-all duration-200 group-hover:bg-ocean-teal/90 group-hover:text-sand-cream group-hover:shadow-[0_4px_14px_rgba(0,0,0,0.45)] sm:px-2.5 sm:py-1 sm:text-xs">
-              {h.label}
+            <span className="flex max-w-full items-center gap-1 rounded-full border border-ink/10 bg-spice-gold/95 px-1.5 py-0.5 text-center text-[10px] font-bold leading-tight text-ink shadow-md transition-all duration-200 group-hover:bg-ocean-teal group-hover:text-sand-cream group-hover:shadow-lg sm:px-2.5 sm:py-1 sm:text-xs">
+              <span className="inline-block size-1.5 rounded-full bg-ink group-hover:bg-spice-gold sm:size-2" />
+              <span className="truncate">{h.label}</span>
             </span>
           </Link>
         ))}
@@ -61,4 +62,5 @@ export function IslandMap({ className }: { className?: string }) {
     </div>
   );
 }
+
 
