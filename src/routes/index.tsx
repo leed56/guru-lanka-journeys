@@ -98,20 +98,17 @@ function Home() {
           </Reveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {WHY.map((w, idx) => (
-              <Reveal
-                key={w.label}
-                delay={idx * 100}
-              >
-              <article className="card-surface hover-lift h-full">
-                {w.image ? (
-                  <div className={cn("photo-zoom relative isolate overflow-hidden", idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]")}>
-                    <img src={w.image} alt={w.alt} className="photo-inner absolute inset-0 size-full object-cover" />
-                  </div>
-                ) : (
-                  <Placeholder label={w.label} ratio={idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} />
-                )}
-                <p className="type-body p-5">{w.note}</p>
-              </article>
+              <Reveal key={w.label} delay={idx * 100}>
+                <article className="card-surface hover-lift h-full">
+                  {w.image ? (
+                    <div className={cn("photo-zoom relative isolate overflow-hidden", idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]")}>
+                      <img src={w.image} alt={w.alt} className="photo-inner absolute inset-0 size-full object-cover" />
+                    </div>
+                  ) : (
+                    <Placeholder label={w.label} ratio={idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} />
+                  )}
+                  <p className="type-body p-5">{w.note}</p>
+                </article>
               </Reveal>
             ))}
           </div>
