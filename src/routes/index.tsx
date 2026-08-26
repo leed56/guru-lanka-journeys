@@ -128,7 +128,7 @@ function Home() {
           <Reveal>
             <p className="type-caption text-spice-gold">The Sri Lanka Explorer</p>
             <h2 className="type-h2 mt-3">Tap a place, see what's there</h2>
-            <p className="type-body mt-4 max-w-md opacity-85">
+            <p className="type-body mt-4 max-w-md text-sand-cream/95">
               Twenty-five places across six regions, each with a photo and a few honest sentences.
               Pick an interest and watch the route draw itself.
             </p>
@@ -141,6 +141,7 @@ function Home() {
           </Reveal>
         </div>
       </section>
+
 
       {/* READY-MADE TRIPS */}
       <section className="py-16 md:py-24">
