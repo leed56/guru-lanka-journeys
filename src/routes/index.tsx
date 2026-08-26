@@ -103,6 +103,8 @@ function Home() {
                   {w.image ? (
                     <div className={cn("photo-zoom relative isolate overflow-hidden", idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]")}>
                       <img src={w.image} alt={w.alt} className="photo-inner absolute inset-0 size-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+                      <span className="type-h3 absolute bottom-4 left-4 right-4 z-10 text-sand-cream drop-shadow-sm">{w.label}</span>
                     </div>
                   ) : (
                     <Placeholder label={w.label} ratio={idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} />
