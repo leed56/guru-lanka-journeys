@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Placeholder } from "@/components/site/Placeholder";
 import { SRI_LANKA_PATH } from "@/data/sriLankaPath";
