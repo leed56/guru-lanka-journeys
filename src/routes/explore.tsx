@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { Placeholder } from "@/components/site/Placeholder";
+import { SRI_LANKA_PATH } from "@/data/sriLankaPath";
 import { DESTINATIONS, INTERESTS, REGIONS, type Interest } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -28,8 +29,24 @@ export const Route = createFileRoute("/explore")({
   component: Explore,
 });
 
-const ISLAND_PATH =
-  "M92,58 C142,78 200,108 232,168 C266,214 300,258 332,330 C356,400 372,472 350,532 C330,592 258,652 190,674 C128,694 78,662 60,600 C44,540 50,470 60,400 C70,332 44,250 60,180 C70,120 70,78 92,58 Z";
+
+
+const LABEL_OFFSET: Record<string, { dx: number; dy: number }> = {
+  nagadeepa: { dx: -6, dy: -22 },
+  jaffna: { dx: 0, dy: -6 },
+  nallur: { dx: 4, dy: 12 },
+  galle: { dx: 0, dy: -6 },
+  unawatuna: { dx: 2, dy: 8 },
+  weligama: { dx: -34, dy: 34 },
+  mirissa: { dx: 10, dy: 22 },
+  tangalle: { dx: 0, dy: 6 },
+  sigiriya: { dx: 0, dy: -8 },
+  polonnaruwa: { dx: -18, dy: 16 },
+  pasikuda: { dx: 6, dy: 26 },
+  ella: { dx: 6, dy: -2 },
+  "nuwara-eliya": { dx: 0, dy: -4 },
+};
+
 
 const COLOMBO = DESTINATIONS.find((d) => d.id === "colombo")!;
 
@@ -102,8 +119,13 @@ function Explore() {
         <div className="relative mx-auto w-full max-w-[440px]">
           <svg viewBox="0 0 400 720" className="h-auto w-full" role="img" aria-label="Map of Sri Lanka with destination pins">
 
-            <path d={ISLAND_PATH} className="fill-ocean-teal-deep stroke-sand-cream/25" strokeWidth={2} />
-            <path d={ISLAND_PATH} className="fill-none stroke-tea-green/40" strokeWidth={12} />
+            <path d={SRI_LANKA_PATH} className="fill-none stroke-tea-green/35" strokeWidth={10} strokeLinejoin="round" />
+            <path
+              d={SRI_LANKA_PATH}
+              className="fill-ocean-teal-deep stroke-sand-cream/35"
+              strokeWidth={1.5}
+              strokeLinejoin="round"
+            />
 
             {routePath ? (
               <path
@@ -146,8 +168,9 @@ function Explore() {
                   />
 
                   <text
-                    x={d.x + 12}
-                    y={d.y + 4}
+                    x={(d.x > 250 ? d.x - 12 : d.x + 12) + (LABEL_OFFSET[d.id]?.dx ?? 0)}
+                    y={d.y + 4 + (LABEL_OFFSET[d.id]?.dy ?? 0)}
+                    textAnchor={d.x > 250 ? "end" : "start"}
                     className={cn("fill-sand-cream text-[11px]", interest && !active && "opacity-40")}
                   >
                     {d.name}
