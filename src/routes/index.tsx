@@ -5,6 +5,7 @@ import climatesAsset from "@/assets/Nine_climates_in_one_island.jpg.asset.json";
 import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
 import safariAsset from "@/assets/wildlife_safari.jpg.asset.json";
 import curryAsset from "@/assets/Eight_curries_one_plate.jpg.asset.json";
+import hospitalityAsset from "@/assets/sri_lankan_business.jpg.asset.json";
 import { HeroSlideshow } from "@/components/site/HeroSlideshow";
 import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
@@ -42,7 +43,7 @@ const WHY: WhyCard[] = [
   { label: "Leopards an hour from the beach", note: "Wildlife without a long-haul internal flight.", image: safariAsset.url, alt: "Safari jeep of travellers watching a herd of elephants at a waterhole at sunset" },
   { label: "2,000 years of cities", note: "Stone capitals you can walk in a morning.", image: citiesAsset.url, alt: "Sigiriya rock fortress and ancient Anuradhapura ruins with visitors walking the pathways" },
   { label: "Food worth the trip alone", note: "Eight curries, one plate, every time.", image: curryAsset.url, alt: "Sri Lankan rice and curry platter with red rice, dhal, fish curry, sambols and papadams" },
-  { label: "People who mean it", note: "Great hospitality is the whole business here." },
+  { label: "People who mean it", note: "Great hospitality is the whole business here.", image: hospitalityAsset.url, alt: "Sri Lankan hotel team welcoming a family on a beachfront deck with garlands and king coconut" },
 ];
 
 const DURATIONS = ["3", "5", "7", "10", "14"];
