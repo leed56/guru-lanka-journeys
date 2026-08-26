@@ -54,7 +54,9 @@ function Explore() {
   const { interest: initialInterest, place } = Route.useSearch();
   const [interest, setInterest] = useState<Interest | null>(initialInterest ?? null);
   const [selected, setSelected] = useState<string | null>(place ?? null);
+  const [hovered, setHovered] = useState<string | null>(null);
   const [routeKey, setRouteKey] = useState(0);
+
 
   useEffect(() => {
     if (initialInterest) {
