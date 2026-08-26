@@ -12,6 +12,7 @@ import peacock from "@/assets/adithya-ramakrishnan-OIhMCWgOYo4-unsplash.jpg.asse
 import buddhas from "@/assets/bharath-reddy-KxHf3b7YCPk-unsplash.jpg.asset.json";
 import train from "@/assets/gemmmm-BS8a67PahbM-unsplash.jpg.asset.json";
 import street from "@/assets/alex-azabache-8weolGgaa9w-unsplash.jpg.asset.json";
+import business from "@/assets/business_meeting.jpg.asset.json";
 
 export const HERO_SLIDES = [
   { url: galle.url, alt: "Stilt fishermen and Galle Fort lighthouse on a Sri Lankan beach" },
@@ -24,6 +25,7 @@ export const HERO_SLIDES = [
   { url: temple.url, alt: "Evening ceremony at Kataragama Murugan temple" },
   { url: buddhas.url, alt: "Row of seated stone Buddha statues at a Sri Lankan temple" },
   { url: street.url, alt: "Busy Pettah market street in Colombo" },
+  { url: business.url, alt: "Business colleagues meeting outdoors by a scenic lake in Sri Lanka" },
   { url: poolVilla.url, alt: "Infinity pool villa overlooking the Indian Ocean" },
   { url: ayurveda.url, alt: "Ayurvedic oil treatment in a garden pavilion" },
 ];
