@@ -6,6 +6,7 @@ import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
 import { HeroSlideshow } from "@/components/site/HeroSlideshow";
 import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
+import { cn } from "@/lib/utils";
 import { BRAND, COLLECTIONS, INTERESTS } from "@/data/site";
 
 export const Route = createFileRoute("/")({
