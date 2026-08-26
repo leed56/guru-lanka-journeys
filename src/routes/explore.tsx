@@ -132,7 +132,10 @@ function Explore() {
   const [selected, setSelected] = useState<string | null>(place ?? null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [routeKey, setRouteKey] = useState(0);
+  const [isDraggingHandle, setIsDraggingHandle] = useState(false);
 
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const dragStartY = useRef(0);
 
   useEffect(() => {
     if (initialInterest) {
@@ -140,6 +143,15 @@ function Explore() {
       setRouteKey((k) => k + 1);
     }
   }, [initialInterest]);
+
+  // Reset drag transform when a new place is selected
+  useEffect(() => {
+    setIsDraggingHandle(false);
+    if (sheetRef.current) {
+      sheetRef.current.style.transform = "";
+      sheetRef.current.style.transition = "";
+    }
+  }, [selected]);
 
   const matches = useMemo(
     () => (interest ? DESTINATIONS.filter((d) => d.interests.includes(interest) && d.id !== "colombo") : []),
@@ -164,6 +176,37 @@ function Explore() {
   const pick = (value: Interest) => {
     setInterest((cur) => (cur === value ? null : value));
     setRouteKey((k) => k + 1);
+  };
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!sheetRef.current) return;
+    (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
+    dragStartY.current = e.clientY;
+    sheetRef.current.style.transition = "none";
+    setIsDraggingHandle(true);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingHandle || !sheetRef.current) return;
+    const offset = Math.max(0, e.clientY - dragStartY.current);
+    sheetRef.current.style.transform = `translateY(${offset}px)`;
+  };
+
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingHandle || !sheetRef.current) return;
+    setIsDraggingHandle(false);
+    const offset = Math.max(0, e.clientY - dragStartY.current);
+    sheetRef.current.style.transition = "";
+    if (offset > 100) {
+      setSelected(null);
+    } else {
+      sheetRef.current.style.transform = "translateY(0)";
+    }
+    try {
+      (e.currentTarget as HTMLDivElement).releasePointerCapture(e.pointerId);
+    } catch {
+      // capture may already be released
+    }
   };
 
   return (
