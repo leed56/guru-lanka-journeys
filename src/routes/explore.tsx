@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import { Placeholder } from "@/components/site/Placeholder";
 import { SRI_LANKA_PATH } from "@/data/sriLankaPath";
-import { DESTINATIONS, INTERESTS, REGIONS, type Interest } from "@/data/site";
+import { DESTINATIONS, INTERESTS, REGIONS, type Destination, type Interest } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 type Search = { interest?: Interest | undefined; place?: string | undefined };
@@ -49,6 +49,82 @@ const LABEL_OFFSET: Record<string, { dx: number; dy: number }> = {
 
 
 const COLOMBO = DESTINATIONS.find((d) => d.id === "colombo")!;
+
+function RegionsIntro({ className }: { className?: string }) {
+  return (
+    <div className={cn("rounded-2xl border border-sand-cream/20 p-6", className)}>
+      <h2 className="type-h3">Six regions, 25 places</h2>
+      <ul className="mt-4 space-y-3">
+        {REGIONS.map((r) => (
+          <li key={r}>
+            <p className="type-caption text-spice-gold">{r}</p>
+            <p className="text-sm opacity-80">
+              {DESTINATIONS.filter((d) => d.region === r).map((d) => d.name).join(" · ")}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+type DetailCardProps = {
+  detail: Destination;
+  interest: Interest | null;
+  onClose: () => void;
+  onToggleInterest: (value: Interest) => void;
+  className?: string;
+};
+
+function DetailCard({ detail, interest, onClose, onToggleInterest, className }: DetailCardProps) {
+  return (
+    <div className={cn("card-surface animate-in slide-in-from-bottom-4 fade-in text-ink duration-500", className)}>
+      <Placeholder label={detail.name} ratio="aspect-[16/9]" />
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <p className="type-caption text-muted-foreground">{detail.region}</p>
+            <h2 className="type-h2 mt-1">{detail.name}</h2>
+          </div>
+          <button type="button" onClick={onClose} aria-label="Close" className="rounded-md p-1 hover:bg-muted">
+            <X className="size-5" />
+          </button>
+        </div>
+        <p className="type-body mt-4 text-muted-foreground">{detail.blurb}</p>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {detail.interests.map((id) => {
+            const meta = INTERESTS.find((x) => x.id === id);
+            if (!meta) return null;
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => onToggleInterest(id)}
+                className={cn("chip", interest === id && "chip-active")}
+              >
+                {meta.label}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link
+            to="/journey"
+            search={detail.interests[0] ? { interest: detail.interests[0] } : {}}
+            className="btn-gold"
+          >
+            Build a trip around this
+          </Link>
+          <Link to="/contact" search={{ tag: detail.name }} className="btn-outline text-ocean-teal">
+            Ask about {detail.name}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function Explore() {
   const { interest: initialInterest, place } = Route.useSearch();
