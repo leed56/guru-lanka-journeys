@@ -1,6 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { X } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Placeholder } from "@/components/site/Placeholder";
 import { SRI_LANKA_PATH } from "@/data/sriLankaPath";
@@ -132,7 +132,10 @@ function Explore() {
   const [selected, setSelected] = useState<string | null>(place ?? null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [routeKey, setRouteKey] = useState(0);
+  const [isDraggingHandle, setIsDraggingHandle] = useState(false);
 
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const dragStartY = useRef(0);
 
   useEffect(() => {
     if (initialInterest) {
@@ -140,6 +143,15 @@ function Explore() {
       setRouteKey((k) => k + 1);
     }
   }, [initialInterest]);
+
+  // Reset drag transform when a new place is selected
+  useEffect(() => {
+    setIsDraggingHandle(false);
+    if (sheetRef.current) {
+      sheetRef.current.style.transform = "";
+      sheetRef.current.style.transition = "";
+    }
+  }, [selected]);
 
   const matches = useMemo(
     () => (interest ? DESTINATIONS.filter((d) => d.interests.includes(interest) && d.id !== "colombo") : []),
@@ -164,6 +176,37 @@ function Explore() {
   const pick = (value: Interest) => {
     setInterest((cur) => (cur === value ? null : value));
     setRouteKey((k) => k + 1);
+  };
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!sheetRef.current) return;
+    (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
+    dragStartY.current = e.clientY;
+    sheetRef.current.style.transition = "none";
+    setIsDraggingHandle(true);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingHandle || !sheetRef.current) return;
+    const offset = Math.max(0, e.clientY - dragStartY.current);
+    sheetRef.current.style.transform = `translateY(${offset}px)`;
+  };
+
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingHandle || !sheetRef.current) return;
+    setIsDraggingHandle(false);
+    const offset = Math.max(0, e.clientY - dragStartY.current);
+    sheetRef.current.style.transition = "";
+    if (offset > 100) {
+      setSelected(null);
+    } else {
+      sheetRef.current.style.transform = "translateY(0)";
+    }
+    try {
+      (e.currentTarget as HTMLDivElement).releasePointerCapture(e.pointerId);
+    } catch {
+      // capture may already be released
+    }
   };
 
   return (
@@ -303,13 +346,25 @@ function Explore() {
       {/* MOBILE DETAIL SHEET */}
       {detail && (
         <div
-          className="fixed inset-x-0 bottom-14 z-[60] max-h-[65vh] overflow-y-auto rounded-t-3xl bg-sand-cream px-4 pb-4 pt-2 shadow-[0_-12px_40px_-12px_rgba(0,0,0,0.35)] lg:hidden"
+          ref={sheetRef}
+          className="fixed inset-x-0 bottom-14 z-[60] max-h-[65vh] overflow-y-auto rounded-t-3xl bg-sand-cream px-4 pb-4 pt-2 shadow-[0_-12px_40px_-12px_rgba(0,0,0,0.35)] transition-transform duration-200 ease-out lg:hidden"
           role="dialog"
           aria-modal="true"
           aria-label={`${detail.name} details`}
         >
-          <div className="sticky top-0 z-10 flex justify-center">
-            <div className="h-1 w-12 rounded-full bg-sand-cream/70 shadow-sm" />
+          <div
+            className={cn(
+              "sticky top-0 z-10 flex cursor-grab justify-center py-3 touch-none select-none",
+              isDraggingHandle && "cursor-grabbing",
+            )}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            aria-label="Drag down to close"
+            role="button"
+            tabIndex={0}
+          >
+            <div className="h-1.5 w-14 rounded-full bg-ink/25 shadow-sm" />
           </div>
           <DetailCard
             detail={detail}
