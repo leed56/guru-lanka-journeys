@@ -28,7 +28,14 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const WHY = [
+type WhyCard = {
+  label: string;
+  note: string;
+  image?: string;
+  alt?: string;
+};
+
+const WHY: WhyCard[] = [
   { label: "Nine climates in one island", note: "Surf at breakfast, cold mountain air by dinner.", image: climatesAsset.url, alt: "Beach, mountains, climbers and campers showing Sri Lanka's varied climates in one scene" },
   { label: "Leopards an hour from the beach", note: "Wildlife without a long-haul internal flight." },
   { label: "2,000 years of cities", note: "Stone capitals you can walk in a morning.", image: citiesAsset.url, alt: "Sigiriya rock fortress and ancient Anuradhapura ruins with visitors walking the pathways" },
