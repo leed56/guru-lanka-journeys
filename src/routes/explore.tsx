@@ -31,6 +31,17 @@ export const Route = createFileRoute("/explore")({
 
 
 
+const LABEL_OFFSET: Record<string, { dx: number; dy: number }> = {
+  nagadeepa: { dx: 0, dy: -10 },
+  nallur: { dx: 0, dy: 10 },
+  unawatuna: { dx: -2, dy: 10 },
+  weligama: { dx: -6, dy: 14 },
+  mirissa: { dx: 2, dy: 12 },
+  polonnaruwa: { dx: 0, dy: 12 },
+  pasikuda: { dx: 0, dy: 12 },
+  ella: { dx: 0, dy: -8 },
+};
+
 const COLOMBO = DESTINATIONS.find((d) => d.id === "colombo")!;
 
 function Explore() {
@@ -151,8 +162,8 @@ function Explore() {
                   />
 
                   <text
-                    x={d.x > 250 ? d.x - 12 : d.x + 12}
-                    y={d.y + 4}
+                    x={(d.x > 250 ? d.x - 12 : d.x + 12) + (LABEL_OFFSET[d.id]?.dx ?? 0)}
+                    y={d.y + 4 + (LABEL_OFFSET[d.id]?.dy ?? 0)}
                     textAnchor={d.x > 250 ? "end" : "start"}
                     className={cn("fill-sand-cream text-[11px]", interest && !active && "opacity-40")}
                   >
