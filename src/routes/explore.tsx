@@ -303,7 +303,7 @@ function Explore() {
       {/* MOBILE DETAIL SHEET */}
       {detail && (
         <div
-          className="fixed inset-x-0 bottom-14 z-50 max-h-[65vh] overflow-y-auto px-4 pb-4 lg:hidden"
+          className="fixed inset-x-0 bottom-14 z-[60] max-h-[65vh] overflow-y-auto px-4 pb-4 lg:hidden"
           role="dialog"
           aria-modal="true"
           aria-label={`${detail.name} details`}
