@@ -4,6 +4,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 import climatesAsset from "@/assets/Nine_climates_in_one_island.jpg.asset.json";
 import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
 import safariAsset from "@/assets/wildlife_safari.jpg.asset.json";
+import curryAsset from "@/assets/Eight_curries_one_plate.jpg.asset.json";
 import { HeroSlideshow } from "@/components/site/HeroSlideshow";
 import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
@@ -40,7 +41,7 @@ const WHY: WhyCard[] = [
   { label: "Nine climates in one island", note: "Surf at breakfast, cold mountain air by dinner.", image: climatesAsset.url, alt: "Beach, mountains, climbers and campers showing Sri Lanka's varied climates in one scene" },
   { label: "Leopards an hour from the beach", note: "Wildlife without a long-haul internal flight.", image: safariAsset.url, alt: "Safari jeep of travellers watching a herd of elephants at a waterhole at sunset" },
   { label: "2,000 years of cities", note: "Stone capitals you can walk in a morning.", image: citiesAsset.url, alt: "Sigiriya rock fortress and ancient Anuradhapura ruins with visitors walking the pathways" },
-  { label: "Food worth the trip alone", note: "Eight curries, one plate, every time." },
+  { label: "Food worth the trip alone", note: "Eight curries, one plate, every time.", image: curryAsset.url, alt: "Sri Lankan rice and curry platter with red rice, dhal, fish curry, sambols and papadams" },
   { label: "People who mean it", note: "Great hospitality is the whole business here." },
 ];
 
