@@ -54,7 +54,9 @@ function Explore() {
   const { interest: initialInterest, place } = Route.useSearch();
   const [interest, setInterest] = useState<Interest | null>(initialInterest ?? null);
   const [selected, setSelected] = useState<string | null>(place ?? null);
+  const [hovered, setHovered] = useState<string | null>(null);
   const [routeKey, setRouteKey] = useState(0);
+
 
   useEffect(() => {
     if (initialInterest) {
@@ -147,9 +149,14 @@ function Explore() {
                 <g
                   key={d.id}
                   onClick={() => setSelected(d.id)}
+                  onMouseEnter={() => setHovered(d.id)}
+                  onMouseLeave={() => setHovered((h) => (h === d.id ? null : h))}
+                  onFocus={() => setHovered(d.id)}
+                  onBlur={() => setHovered((h) => (h === d.id ? null : h))}
                   className="cursor-pointer"
                   role="button"
                   tabIndex={0}
+                  aria-label={`${d.name}, ${d.region}`}
                   onKeyDown={(e) => e.key === "Enter" && setSelected(d.id)}
                 >
                   {(active || isSelected) && !(interest && !active) ? (
@@ -158,11 +165,11 @@ function Explore() {
                   <circle
                     cx={d.x}
                     cy={d.y}
-                    r={isSelected ? 9 : 6}
+                    r={isSelected || hovered === d.id ? 9 : 6}
                     className={cn(
                       "transition-all",
                       interest && !active ? "fill-sand-cream/25" : "fill-spice-gold",
-                      isSelected && "stroke-sand-cream",
+                      (isSelected || hovered === d.id) && "stroke-sand-cream",
                     )}
                     strokeWidth={2}
                   />
@@ -178,6 +185,27 @@ function Explore() {
                 </g>
               );
             })}
+
+            {/* HOVER TOOLTIP */}
+            {(() => {
+              const d = DESTINATIONS.find((x) => x.id === hovered);
+              if (!d) return null;
+              const W = 190;
+              const H = 92;
+              const x = Math.min(Math.max(d.x - W / 2, 6), 400 - W - 6);
+              const above = d.y > H + 24;
+              const y = above ? d.y - H - 16 : d.y + 18;
+              return (
+                <foreignObject x={x} y={y} width={W} height={H} className="pointer-events-none">
+                  <div className="animate-in fade-in zoom-in-95 duration-200 rounded-xl border border-spice-gold/60 bg-ink/90 p-3 text-sand-cream shadow-xl backdrop-blur-sm">
+                    <p className="text-[9px] uppercase tracking-[0.14em] text-spice-gold">{d.region}</p>
+                    <p className="mt-0.5 text-[13px] font-semibold leading-tight">{d.name}</p>
+                    <p className="mt-1 line-clamp-3 text-[10px] leading-snug opacity-85">{d.blurb}</p>
+                  </div>
+                </foreignObject>
+              );
+            })()}
+
           </svg>
         </div>
 
