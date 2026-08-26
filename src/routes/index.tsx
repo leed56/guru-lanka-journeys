@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import climatesAsset from "@/assets/Nine_climates_in_one_island.jpg.asset.json";
 import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
@@ -7,6 +7,7 @@ import safariAsset from "@/assets/wildlife_safari.jpg.asset.json";
 import curryAsset from "@/assets/Eight_curries_one_plate.jpg.asset.json";
 import hospitalityAsset from "@/assets/sri_lankan_business.jpg.asset.json";
 import { HeroSlideshow } from "@/components/site/HeroSlideshow";
+import { IslandMap } from "@/components/site/IslandMap";
 import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
@@ -136,24 +137,7 @@ function Home() {
             </Link>
           </Reveal>
           <Reveal delay={120}>
-            <div className="relative aspect-[4/5] rounded-2xl border border-sand-cream/20 bg-ocean-teal-deep">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="type-caption opacity-40">Stylised island map</span>
-              </div>
-              {[
-                { top: "22%", left: "38%" },
-                { top: "48%", left: "62%" },
-                { top: "70%", left: "30%" },
-              ].map((p) => (
-                <span
-                  key={p.top}
-                  style={p}
-                  className="soft-pulse absolute grid size-7 place-items-center rounded-full bg-spice-gold text-ink"
-                >
-                  <MapPin className="size-3.5" />
-                </span>
-              ))}
-            </div>
+            <IslandMap />
           </Reveal>
         </div>
       </section>
