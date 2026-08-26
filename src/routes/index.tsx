@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import climatesAsset from "@/assets/Nine_climates_in_one_island.jpg.asset.json";
 import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
@@ -7,6 +7,7 @@ import safariAsset from "@/assets/wildlife_safari.jpg.asset.json";
 import curryAsset from "@/assets/Eight_curries_one_plate.jpg.asset.json";
 import hospitalityAsset from "@/assets/sri_lankan_business.jpg.asset.json";
 import { HeroSlideshow } from "@/components/site/HeroSlideshow";
+import { IslandMap } from "@/components/site/IslandMap";
 import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
