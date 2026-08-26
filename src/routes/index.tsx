@@ -136,24 +136,7 @@ function Home() {
             </Link>
           </Reveal>
           <Reveal delay={120}>
-            <div className="relative aspect-[4/5] rounded-2xl border border-sand-cream/20 bg-ocean-teal-deep">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="type-caption opacity-40">Stylised island map</span>
-              </div>
-              {[
-                { top: "22%", left: "38%" },
-                { top: "48%", left: "62%" },
-                { top: "70%", left: "30%" },
-              ].map((p) => (
-                <span
-                  key={p.top}
-                  style={p}
-                  className="soft-pulse absolute grid size-7 place-items-center rounded-full bg-spice-gold text-ink"
-                >
-                  <MapPin className="size-3.5" />
-                </span>
-              ))}
-            </div>
+            <IslandMap />
           </Reveal>
         </div>
       </section>
