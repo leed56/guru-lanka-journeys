@@ -1,9 +1,12 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, MapPin } from "lucide-react";
 
+import climatesAsset from "@/assets/Nine_climates_in_one_island.jpg.asset.json";
+import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
 import { HeroSlideshow } from "@/components/site/HeroSlideshow";
 import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
+import { cn } from "@/lib/utils";
 import { BRAND, COLLECTIONS, INTERESTS } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -25,10 +28,17 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const WHY = [
-  { label: "Nine climates in one island", note: "Surf at breakfast, cold mountain air by dinner." },
+type WhyCard = {
+  label: string;
+  note: string;
+  image?: string;
+  alt?: string;
+};
+
+const WHY: WhyCard[] = [
+  { label: "Nine climates in one island", note: "Surf at breakfast, cold mountain air by dinner.", image: climatesAsset.url, alt: "Beach, mountains, climbers and campers showing Sri Lanka's varied climates in one scene" },
   { label: "Leopards an hour from the beach", note: "Wildlife without a long-haul internal flight." },
-  { label: "2,000 years of cities", note: "Stone capitals you can walk in a morning." },
+  { label: "2,000 years of cities", note: "Stone capitals you can walk in a morning.", image: citiesAsset.url, alt: "Sigiriya rock fortress and ancient Anuradhapura ruins with visitors walking the pathways" },
   { label: "Food worth the trip alone", note: "Eight curries, one plate, every time." },
   { label: "People who mean it", note: "Great hospitality is the whole business here." },
 ];
@@ -88,12 +98,15 @@ function Home() {
           </Reveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {WHY.map((w, idx) => (
-              <Reveal
-                key={w.label}
-                delay={idx * 100}
-              >
+              <Reveal key={w.label} delay={idx * 100}>
                 <article className="card-surface hover-lift h-full">
-                  <Placeholder label={w.label} ratio={idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} />
+                  {w.image ? (
+                    <div className={cn("photo-zoom relative isolate overflow-hidden", idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]")}>
+                      <img src={w.image} alt={w.alt} className="photo-inner absolute inset-0 size-full object-cover" />
+                    </div>
+                  ) : (
+                    <Placeholder label={w.label} ratio={idx === 0 ? "aspect-[4/5]" : "aspect-[4/3]"} />
+                  )}
                   <p className="type-body p-5">{w.note}</p>
                 </article>
               </Reveal>
