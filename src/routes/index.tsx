@@ -3,6 +3,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 
 import climatesAsset from "@/assets/Nine_climates_in_one_island.jpg.asset.json";
 import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
+import safariAsset from "@/assets/wildlife_safari.jpg.asset.json";
 import { HeroSlideshow } from "@/components/site/HeroSlideshow";
 import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
