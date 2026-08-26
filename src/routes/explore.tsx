@@ -32,18 +32,18 @@ export const Route = createFileRoute("/explore")({
 
 
 const LABEL_OFFSET: Record<string, { dx: number; dy: number }> = {
-  nagadeepa: { dx: -4, dy: -14 },
+  nagadeepa: { dx: -6, dy: -22 },
   jaffna: { dx: 0, dy: -6 },
   nallur: { dx: 4, dy: 12 },
   galle: { dx: 0, dy: -6 },
   unawatuna: { dx: 2, dy: 8 },
-  weligama: { dx: -14, dy: 26 },
-  mirissa: { dx: 6, dy: 16 },
+  weligama: { dx: -34, dy: 34 },
+  mirissa: { dx: 10, dy: 22 },
   tangalle: { dx: 0, dy: 6 },
   sigiriya: { dx: 0, dy: -8 },
-  polonnaruwa: { dx: -10, dy: 16 },
-  pasikuda: { dx: 0, dy: 14 },
-  ella: { dx: 4, dy: 10 },
+  polonnaruwa: { dx: -18, dy: 16 },
+  pasikuda: { dx: 6, dy: 26 },
+  ella: { dx: 6, dy: -2 },
   "nuwara-eliya": { dx: 0, dy: -4 },
 };
 
