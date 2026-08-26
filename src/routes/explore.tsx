@@ -346,13 +346,25 @@ function Explore() {
       {/* MOBILE DETAIL SHEET */}
       {detail && (
         <div
-          className="fixed inset-x-0 bottom-14 z-[60] max-h-[65vh] overflow-y-auto rounded-t-3xl bg-sand-cream px-4 pb-4 pt-2 shadow-[0_-12px_40px_-12px_rgba(0,0,0,0.35)] lg:hidden"
+          ref={sheetRef}
+          className="fixed inset-x-0 bottom-14 z-[60] max-h-[65vh] overflow-y-auto rounded-t-3xl bg-sand-cream px-4 pb-4 pt-2 shadow-[0_-12px_40px_-12px_rgba(0,0,0,0.35)] transition-transform duration-200 ease-out lg:hidden"
           role="dialog"
           aria-modal="true"
           aria-label={`${detail.name} details`}
         >
-          <div className="sticky top-0 z-10 flex justify-center">
-            <div className="h-1 w-12 rounded-full bg-sand-cream/70 shadow-sm" />
+          <div
+            className={cn(
+              "sticky top-0 z-10 flex cursor-grab justify-center py-3 touch-none select-none",
+              isDraggingHandle && "cursor-grabbing",
+            )}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            aria-label="Drag down to close"
+            role="button"
+            tabIndex={0}
+          >
+            <div className="h-1.5 w-14 rounded-full bg-ink/25 shadow-sm" />
           </div>
           <DetailCard
             detail={detail}
