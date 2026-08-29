@@ -15,7 +15,7 @@ import negombo from "@/assets/destination-negombo.jpg.asset.json";
 import nilaveli from "@/assets/destination-nilaveli-snorkel.jpg.asset.json";
 import nuwaraEliya from "@/assets/destination-nuwara-eliya.jpg.asset.json";
 import pasikuda from "@/assets/destination-pasikuda.jpg.asset.json";
-import polonnaruwa from "@/assets/destination-polonnaruwa.jpg.asset.json";
+import polonnaruwa from "@/assets/destination-polonnaruwa-gal-vihara.jpg.asset.json";
 import sigiriya from "@/assets/destination-sigiriya.jpg.asset.json";
 import trincomalee from "@/assets/destination-trincomalee-koneswaram.jpg.asset.json";
 import weligama from "@/assets/destination-weligama.jpg.asset.json";
