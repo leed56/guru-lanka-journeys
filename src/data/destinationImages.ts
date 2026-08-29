@@ -32,7 +32,7 @@ export const DESTINATION_IMAGES: Record<string, string> = {
   "bentota-area": imageUrl(ayurveda),
   colombo: imageUrl(colombo),
   dambulla: imageUrl(dambulla),
-  delft: imageUrl(nilaveli),
+  delft: imageUrl(delftIsland),
   ella: imageUrl(teaPlantations),
   galle: imageUrl(galle),
   haputale: imageUrl(haputale),
