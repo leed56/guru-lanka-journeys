@@ -1,0 +1,54 @@
+import anuradhapura from "@/assets/destination-anuradhapura.jpg.asset.json";
+import arugamBay from "@/assets/destination-arugam-bay.jpg.asset.json";
+import colombo from "@/assets/destination-colombo.jpg.asset.json";
+import dambulla from "@/assets/destination-dambulla.jpg.asset.json";
+import galle from "@/assets/destination-galle.jpg.asset.json";
+import haputale from "@/assets/destination-haputale.jpg.asset.json";
+import jaffna from "@/assets/destination-jaffna.jpg.asset.json";
+import kalpitiya from "@/assets/destination-kalpitiya.jpg.asset.json";
+import kandy from "@/assets/destination-kandy.jpg.asset.json";
+import mirissa from "@/assets/destination-mirissa.jpg.asset.json";
+import nagadeepa from "@/assets/destination-nagadeepa.jpg.asset.json";
+import nallur from "@/assets/destination-nallur.jpg.asset.json";
+import negombo from "@/assets/destination-negombo.jpg.asset.json";
+import nilaveli from "@/assets/destination-nilaveli.jpg.asset.json";
+import nuwaraEliya from "@/assets/destination-nuwara-eliya.jpg.asset.json";
+import pasikuda from "@/assets/destination-pasikuda.jpg.asset.json";
+import polonnaruwa from "@/assets/destination-polonnaruwa.jpg.asset.json";
+import sigiriya from "@/assets/destination-sigiriya.jpg.asset.json";
+import trincomalee from "@/assets/destination-trincomalee.jpg.asset.json";
+import weligama from "@/assets/destination-weligama.jpg.asset.json";
+import ayurveda from "@/assets/Ayurveda_wellness.jpg.asset.json";
+import galleBeach from "@/assets/Galle_Beach.jpg.asset.json";
+import teaPlantations from "@/assets/Tea_Plantations.jpg.asset.json";
+
+const imageUrl = (asset: { url: string }) => asset.url;
+
+/** A photo for every clickable place on the Explorer map. */
+export const DESTINATION_IMAGES: Record<string, string> = {
+  anuradhapura: imageUrl(anuradhapura),
+  "arugam-bay": imageUrl(arugamBay),
+  "bentota-area": imageUrl(ayurveda),
+  colombo: imageUrl(colombo),
+  dambulla: imageUrl(dambulla),
+  delft: imageUrl(nilaveli),
+  ella: imageUrl(teaPlantations),
+  galle: imageUrl(galle),
+  haputale: imageUrl(haputale),
+  jaffna: imageUrl(jaffna),
+  kalpitiya: imageUrl(kalpitiya),
+  kandy: imageUrl(kandy),
+  mirissa: imageUrl(mirissa),
+  nagadeepa: imageUrl(nagadeepa),
+  nallur: imageUrl(nallur),
+  negombo: imageUrl(negombo),
+  nilaveli: imageUrl(nilaveli),
+  "nuwara-eliya": imageUrl(nuwaraEliya),
+  pasikuda: imageUrl(pasikuda),
+  polonnaruwa: imageUrl(polonnaruwa),
+  sigiriya: imageUrl(sigiriya),
+  tangalle: imageUrl(galleBeach),
+  trincomalee: imageUrl(trincomalee),
+  unawatuna: imageUrl(galleBeach),
+  weligama: imageUrl(weligama),
+};
