@@ -2,8 +2,8 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { Placeholder } from "@/components/site/Placeholder";
 import { SRI_LANKA_PATH } from "@/data/sriLankaPath";
+import { DESTINATION_IMAGES } from "@/data/destinationImages";
 import { DESTINATIONS, INTERESTS, REGIONS, type Destination, type Interest } from "@/data/site";
 import { cn } from "@/lib/utils";
 
