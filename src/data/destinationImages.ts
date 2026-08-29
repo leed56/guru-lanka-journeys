@@ -1,4 +1,4 @@
-import anuradhapura from "@/assets/destination-anuradhapura.jpg.asset.json";
+import anuradhapura from "@/assets/destination-anuradhapura-stupa.jpg.asset.json";
 import arugamBay from "@/assets/destination-arugam-bay.jpg.asset.json";
 import colombo from "@/assets/destination-colombo.jpg.asset.json";
 import dambulla from "@/assets/destination-dambulla.jpg.asset.json";
