@@ -7,7 +7,7 @@ import galle from "@/assets/destination-galle.jpg.asset.json";
 import haputale from "@/assets/destination-haputale.jpg.asset.json";
 import jaffna from "@/assets/destination-jaffna-city.jpg.asset.json";
 import kalpitiya from "@/assets/destination-kalpitiya-dolphins.jpg.asset.json";
-import kandy from "@/assets/destination-kandy.jpg.asset.json";
+import kandy from "@/assets/destination-kandy-perahera.webp.asset.json";
 import mirissa from "@/assets/destination-mirissa.jpg.asset.json";
 import nagadeepa from "@/assets/destination-nagadeepa.avif.asset.json";
 import nallur from "@/assets/destination-nallur.jpg.asset.json";
