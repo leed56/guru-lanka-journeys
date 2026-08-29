@@ -213,7 +213,7 @@ function Explore() {
     <div className="bg-ocean-teal text-sand-cream">
       <div className="section-x py-12 md:py-16">
         <p className="type-caption text-spice-gold">The Sri Lanka Explorer</p>
-        <h1 className="type-h1 mt-3 max-w-2xl">Tap a place, see what's there</h1>
+        <h1 className="type-h1 mt-3 max-w-2xl">Explore Sri Lanka Your Way</h1>
         <p className="type-body mt-4 max-w-lg opacity-85">
           Pick an interest and we'll trace the route from Colombo out to the places that fit it.
         </p>
