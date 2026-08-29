@@ -127,10 +127,9 @@ function Home() {
         <div className="section-x grid items-center gap-10 md:grid-cols-[1fr_1.1fr]">
           <Reveal>
             <p className="type-caption text-spice-gold">The Sri Lanka Explorer</p>
-            <h2 className="type-h2 mt-3">Tap a place, see what's there</h2>
+            <h2 className="type-h2 mt-3">Explore Sri Lanka Your Way</h2>
             <p className="type-body mt-4 max-w-md text-sand-cream/95">
-              Twenty-five places across six regions, each with a photo and a few honest sentences.
-              Pick an interest and watch the route draw itself.
+              Explore 25 handpicked destinations across six beautiful regions of Sri Lanka, each brought to life with stunning photography and authentic stories. Choose what inspires you—beaches, mountains, wildlife, culture, spirituality, or adventure—and watch your perfect Sri Lankan journey come to life on the map.
             </p>
             <Link to="/explore" className="btn-gold mt-7">
               Explore the Map
