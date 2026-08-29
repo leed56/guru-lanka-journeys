@@ -3,6 +3,7 @@ import arugamBay from "@/assets/destination-arugam-bay.jpg.asset.json";
 import colombo from "@/assets/destination-colombo-lotus.jpg.asset.json";
 import dambulla from "@/assets/destination-dambulla.jpg.asset.json";
 import delftIsland from "@/assets/destination-delft.jpg.asset.json";
+import ella from "@/assets/destination-ella-nine-arch.jpg.asset.json";
 import galle from "@/assets/destination-galle.jpg.asset.json";
 import haputale from "@/assets/destination-haputale.jpg.asset.json";
 import jaffna from "@/assets/destination-jaffna-city.jpg.asset.json";
@@ -33,7 +34,7 @@ export const DESTINATION_IMAGES: Record<string, string> = {
   colombo: imageUrl(colombo),
   dambulla: imageUrl(dambulla),
   delft: imageUrl(delftIsland),
-  ella: imageUrl(teaPlantations),
+  ella: imageUrl(ella),
   galle: imageUrl(galle),
   haputale: imageUrl(haputale),
   jaffna: imageUrl(jaffna),
