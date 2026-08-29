@@ -13,7 +13,7 @@ import nagadeepa from "@/assets/destination-nagadeepa.avif.asset.json";
 import nallur from "@/assets/destination-nallur.jpg.asset.json";
 import negombo from "@/assets/destination-negombo-lagoon.jpg.asset.json";
 import nilaveli from "@/assets/destination-nilaveli-snorkel.jpg.asset.json";
-import nuwaraEliya from "@/assets/destination-nuwara-eliya.jpg.asset.json";
+import nuwaraEliya from "@/assets/destination-nuwara-eliya-golf.jpg.asset.json";
 import pasikuda from "@/assets/destination-pasikuda-aerial.webp.asset.json";
 import polonnaruwa from "@/assets/destination-polonnaruwa-gal-vihara.jpg.asset.json";
 import sigiriya from "@/assets/destination-sigiriya.jpg.asset.json";
