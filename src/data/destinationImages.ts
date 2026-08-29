@@ -9,7 +9,7 @@ import jaffna from "@/assets/destination-jaffna.jpg.asset.json";
 import kalpitiya from "@/assets/destination-kalpitiya.jpg.asset.json";
 import kandy from "@/assets/destination-kandy.jpg.asset.json";
 import mirissa from "@/assets/destination-mirissa.jpg.asset.json";
-import nagadeepa from "@/assets/destination-nagadeepa.jpg.asset.json";
+import nagadeepa from "@/assets/destination-nagadeepa.avif.asset.json";
 import nallur from "@/assets/destination-nallur.jpg.asset.json";
 import negombo from "@/assets/destination-negombo.jpg.asset.json";
 import nilaveli from "@/assets/destination-nilaveli.jpg.asset.json";
