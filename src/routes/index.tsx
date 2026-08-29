@@ -69,7 +69,7 @@ function Home() {
         <div className="section-x flex min-h-[88vh] flex-col justify-end pb-16 pt-24 text-sand-cream md:pb-24">
           <Reveal>
             <p className="type-caption text-spice-gold">{BRAND.tagline}</p>
-            <h1 className="type-h1 mt-4 max-w-3xl">Where do you want to go in Sri Lanka?</h1>
+            <h1 className="type-h1 mt-4 max-w-3xl">Feel the wonderful Sri Lanka.</h1>
             <p className="type-body mt-4 max-w-xl opacity-85">{BRAND.positioning}</p>
           </Reveal>
 
