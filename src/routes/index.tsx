@@ -98,7 +98,7 @@ function Home() {
       <section className="bg-sand-cream py-16 md:py-24">
         <div className="section-x">
           <Reveal>
-            <h2 className="type-h2 max-w-xl">Why does everyone come back?</h2>
+            <h2 className="type-h2 max-w-xl">Why choose Sri Lanka?</h2>
           </Reveal>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {WHY.map((w, idx) => (
