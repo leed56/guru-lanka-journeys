@@ -17,7 +17,7 @@ import nuwaraEliya from "@/assets/destination-nuwara-eliya.jpg.asset.json";
 import pasikuda from "@/assets/destination-pasikuda.jpg.asset.json";
 import polonnaruwa from "@/assets/destination-polonnaruwa.jpg.asset.json";
 import sigiriya from "@/assets/destination-sigiriya.jpg.asset.json";
-import trincomalee from "@/assets/destination-trincomalee.jpg.asset.json";
+import trincomalee from "@/assets/destination-trincomalee-koneswaram.jpg.asset.json";
 import weligama from "@/assets/destination-weligama.jpg.asset.json";
 import ayurveda from "@/assets/Ayurveda_wellness.jpg.asset.json";
 import galleBeach from "@/assets/Galle_Beach.jpg.asset.json";
