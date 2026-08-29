@@ -2,8 +2,8 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { Placeholder } from "@/components/site/Placeholder";
 import { SRI_LANKA_PATH } from "@/data/sriLankaPath";
+import { DESTINATION_IMAGES } from "@/data/destinationImages";
 import { DESTINATIONS, INTERESTS, REGIONS, type Destination, type Interest } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -77,9 +77,24 @@ type DetailCardProps = {
 };
 
 function DetailCard({ detail, interest, onClose, onToggleInterest, className }: DetailCardProps) {
+  const image = DESTINATION_IMAGES[detail.id];
+
   return (
     <div className={cn("card-surface animate-in slide-in-from-bottom-4 fade-in text-ink duration-500", className)}>
-      <Placeholder label={detail.name} ratio="aspect-[16/9]" />
+      <div className="photo-zoom relative aspect-[16/9] overflow-hidden">
+        {image ? (
+          <img
+            src={image}
+            alt={`${detail.name}, Sri Lanka`}
+            className="photo-inner absolute inset-0 size-full object-cover"
+            loading="lazy"
+          />
+        ) : (
+          <div className="photo-inner absolute inset-0 flex items-center justify-center bg-tea-green text-sand-cream">
+            <span className="type-h3">{detail.name}</span>
+          </div>
+        )}
+      </div>
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
