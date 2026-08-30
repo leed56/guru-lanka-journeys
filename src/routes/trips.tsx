@@ -4,6 +4,7 @@ import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
 import { StickyContactBar } from "@/components/site/StickyContactBar";
 import { COLLECTIONS } from "@/data/site";
+import { conceptImage } from "@/data/conceptImages";
 
 export const Route = createFileRoute("/trips")({
   head: () => ({
