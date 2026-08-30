@@ -1,5 +1,5 @@
 import anuradhapura from "@/assets/destination-anuradhapura-stupa.jpg.asset.json";
-import arugamBay from "@/assets/destination-arugam-bay.jpg.asset.json";
+import arugamBay from "@/assets/destination-arugam-bay-surf.avif.asset.json";
 import colombo from "@/assets/destination-colombo-lotus.jpg.asset.json";
 import dambulla from "@/assets/destination-dambulla.jpg.asset.json";
 import delftIsland from "@/assets/destination-delft.jpg.asset.json";
