@@ -146,9 +146,9 @@ function Home() {
       <section className="py-16 md:py-24">
         <div className="section-x">
           <Reveal>
-            <h2 className="type-h2">Would a ready-made trip do?</h2>
+            <h2 className="type-h2">Our Exclusive 10 Tour Concepts</h2>
             <p className="type-body mt-3 max-w-lg text-muted-foreground">
-              Eight Guru Collections, each one route we've run many times. Change anything you like.
+              Explore Sri Lanka through 10 unique journeys—Spiritual, Cultural &amp; Heritage, Sports, Women’s Friendship, Romantic, Fun &amp; Leisure, Nature Trails, Business, MICE, and Happy Retirement—designed for meaningful, memorable experiences.
             </p>
           </Reveal>
           <div className="mt-10 flex snap-x gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible">
