@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConceptsRouteImport } from './routes/concepts'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as ForAgentsRouteImport } from './routes/for-agents'
 import { Route as ForPartnersRouteImport } from './routes/for-partners'
@@ -20,7 +19,6 @@ import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as StyleGuideRouteImport } from './routes/style-guide'
 import { Route as ConceptsSlugRouteImport } from './routes/concepts.$slug'
-import { Route as DiscoverSlugRouteImport } from './routes/discover.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,11 +33,6 @@ const ConceptsRoute = ConceptsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DiscoverRoute = DiscoverRouteImport.update({
-  id: '/discover',
-  path: '/discover',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExploreRoute = ExploreRouteImport.update({
@@ -77,17 +70,11 @@ const ConceptsSlugRoute = ConceptsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ConceptsRoute,
 } as any)
-const DiscoverSlugRoute = DiscoverSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => DiscoverRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/concepts': typeof ConceptsRouteWithChildren
   '/contact': typeof ContactRoute
-  '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
   '/for-partners': typeof ForPartnersRoute
@@ -95,13 +82,11 @@ export interface FileRoutesByFullPath {
   '/packages': typeof PackagesRoute
   '/style-guide': typeof StyleGuideRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
-  '/discover/$slug': typeof DiscoverSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/concepts': typeof ConceptsRouteWithChildren
   '/contact': typeof ContactRoute
-  '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
   '/for-partners': typeof ForPartnersRoute
@@ -109,14 +94,12 @@ export interface FileRoutesByTo {
   '/packages': typeof PackagesRoute
   '/style-guide': typeof StyleGuideRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
-  '/discover/$slug': typeof DiscoverSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/concepts': typeof ConceptsRouteWithChildren
   '/contact': typeof ContactRoute
-  '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
   '/for-agents': typeof ForAgentsRoute
   '/for-partners': typeof ForPartnersRoute
@@ -124,7 +107,6 @@ export interface FileRoutesById {
   '/packages': typeof PackagesRoute
   '/style-guide': typeof StyleGuideRoute
   '/concepts/$slug': typeof ConceptsSlugRoute
-  '/discover/$slug': typeof DiscoverSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -132,7 +114,6 @@ export interface FileRouteTypes {
     | '/'
     | '/concepts'
     | '/contact'
-    | '/discover'
     | '/explore'
     | '/for-agents'
     | '/for-partners'
@@ -140,13 +121,11 @@ export interface FileRouteTypes {
     | '/packages'
     | '/style-guide'
     | '/concepts/$slug'
-    | '/discover/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/concepts'
     | '/contact'
-    | '/discover'
     | '/explore'
     | '/for-agents'
     | '/for-partners'
@@ -154,13 +133,11 @@ export interface FileRouteTypes {
     | '/packages'
     | '/style-guide'
     | '/concepts/$slug'
-    | '/discover/$slug'
   id:
     | '__root__'
     | '/'
     | '/concepts'
     | '/contact'
-    | '/discover'
     | '/explore'
     | '/for-agents'
     | '/for-partners'
@@ -168,14 +145,12 @@ export interface FileRouteTypes {
     | '/packages'
     | '/style-guide'
     | '/concepts/$slug'
-    | '/discover/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ConceptsRoute: typeof ConceptsRouteWithChildren
   ContactRoute: typeof ContactRoute
-  DiscoverRoute: typeof DiscoverRouteWithChildren
   ExploreRoute: typeof ExploreRoute
   ForAgentsRoute: typeof ForAgentsRoute
   ForPartnersRoute: typeof ForPartnersRoute
@@ -205,13 +180,6 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/discover': {
-      id: '/discover'
-      path: '/discover'
-      fullPath: '/discover'
-      preLoaderRoute: typeof DiscoverRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/explore': {
@@ -263,13 +231,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConceptsSlugRouteImport
       parentRoute: typeof ConceptsRoute
     }
-    '/discover/$slug': {
-      id: '/discover/$slug'
-      path: '/$slug'
-      fullPath: '/discover/$slug'
-      preLoaderRoute: typeof DiscoverSlugRouteImport
-      parentRoute: typeof DiscoverRoute
-    }
   }
 }
 
@@ -285,23 +246,10 @@ const ConceptsRouteWithChildren = ConceptsRoute._addFileChildren(
   ConceptsRouteChildren,
 )
 
-interface DiscoverRouteChildren {
-  DiscoverSlugRoute: typeof DiscoverSlugRoute
-}
-
-const DiscoverRouteChildren: DiscoverRouteChildren = {
-  DiscoverSlugRoute: DiscoverSlugRoute,
-}
-
-const DiscoverRouteWithChildren = DiscoverRoute._addFileChildren(
-  DiscoverRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ConceptsRoute: ConceptsRouteWithChildren,
   ContactRoute: ContactRoute,
-  DiscoverRoute: DiscoverRouteWithChildren,
   ExploreRoute: ExploreRoute,
   ForAgentsRoute: ForAgentsRoute,
   ForPartnersRoute: ForPartnersRoute,
