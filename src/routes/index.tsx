@@ -12,6 +12,7 @@ import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
 import { cn } from "@/lib/utils";
 import { BRAND, COLLECTIONS, INTERESTS } from "@/data/site";
+import { conceptImage } from "@/data/conceptImages";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -155,7 +156,18 @@ function Home() {
             {COLLECTIONS.map((c, idx) => (
               <Reveal key={c.slug} delay={(idx % 4) * 90} className="w-[76vw] shrink-0 snap-start sm:w-[46vw] md:w-auto">
                 <article className="card-surface hover-lift flex h-full flex-col">
-                  <Placeholder label={`${c.name} Tour Concept`} />
+                  {conceptImage(c.slug) ? (
+                    <div className="photo-zoom relative isolate aspect-[3/4] overflow-hidden">
+                      <img
+                        src={conceptImage(c.slug)}
+                        alt={`${c.name} tour concept in Sri Lanka`}
+                        loading="lazy"
+                        className="photo-inner absolute inset-0 size-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <Placeholder label={`${c.name} Tour Concept`} />
+                  )}
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="type-h3">{c.name}</h3>
                     <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.line}</p>

@@ -5,6 +5,7 @@ import { Placeholder } from "@/components/site/Placeholder";
 import { Reveal } from "@/components/site/Reveal";
 import { StickyContactBar } from "@/components/site/StickyContactBar";
 import { COLLECTIONS } from "@/data/site";
+import { conceptImage } from "@/data/conceptImages";
 
 export const Route = createFileRoute("/trips/$slug")({
   loader: ({ params }) => {
@@ -35,7 +36,17 @@ function TripDetail() {
 
   return (
     <div className="pb-28 md:pb-0">
-      <Placeholder label={`${collection.name} Tour Concept`} ratio="aspect-[16/10] md:aspect-[21/8]" className="hero-fade" />
+      {conceptImage(collection.slug) ? (
+        <div className="hero-fade relative isolate aspect-[16/10] overflow-hidden bg-ink md:aspect-[21/8]">
+          <img
+            src={conceptImage(collection.slug)}
+            alt={`${collection.name} tour concept in Sri Lanka`}
+            className="absolute inset-0 size-full object-contain md:object-cover md:object-top"
+          />
+        </div>
+      ) : (
+        <Placeholder label={`${collection.name} Tour Concept`} ratio="aspect-[16/10] md:aspect-[21/8]" className="hero-fade" />
+      )}
 
       <div className="section-x -mt-16 md:-mt-24">
         <div className="card-surface max-w-3xl p-6 md:p-10">
