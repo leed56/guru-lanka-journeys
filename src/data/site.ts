@@ -181,7 +181,7 @@ export const DESTINATIONS: Destination[] = [
   { id: "anuradhapura", name: "Anuradhapura", region: "Cultural Triangle", x: 139, y: 287, interests: ["spiritual", "culture"], blurb: "Walk among ancient stupas, sacred Bodhi trees, royal ruins, and remarkable monuments in Sri Lanka’s legendary first capital." },
   { id: "polonnaruwa", name: "Polonnaruwa", region: "Cultural Triangle", x: 241, y: 349, interests: ["culture", "wildlife"], blurb: "A compact medieval capital best seen by bicycle, with carved Buddhas cut straight from the rock." },
   { id: "sigiriya", name: "Sigiriya", region: "Cultural Triangle", x: 198, y: 346, interests: ["culture", "mountains"], blurb: "Climb the iconic Lion Rock, admire ancient frescoes, and enjoy breathtaking views across Sri Lanka’s lush cultural landscape." },
-  { id: "dambulla", name: "Dambulla", region: "Cultural Triangle", x: 180, y: 363, interests: ["spiritual", "culture"], blurb: "Five cave temples under one overhang, painted end to end and full of Buddha images." },
+  { id: "dambulla", name: "Dambulla", region: "Cultural Triangle", x: 180, y: 363, interests: ["spiritual", "culture"], blurb: "Explore magnificent cave temples filled with centuries-old Buddha statues and paintings, surrounded by beautiful landscapes and spiritual heritage." },
 ];
 
 export const REGIONS: Region[] = ["North", "East", "South", "West", "Hill Country", "Cultural Triangle"];
