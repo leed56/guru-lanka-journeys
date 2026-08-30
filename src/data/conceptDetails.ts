@@ -1,7 +1,16 @@
 import kataragama from "@/assets/Kataragama_murugan_tamil_Temple.jpg.asset.json";
 import nallur from "@/assets/destination-nallur.jpg.asset.json";
-import stupa from "@/assets/destination-anuradhapura-stupa.jpg.asset.json";
 import dambulla from "@/assets/destination-dambulla.jpg.asset.json";
+import a1 from "@/assets/spiritual-a1-tooth-relic.jpg.asset.json";
+import a2 from "@/assets/spiritual-a2-ruwanwelisaya.jpg.asset.json";
+import a3 from "@/assets/spiritual-a3-samadhi-buddha.jpg.asset.json";
+import a4 from "@/assets/spiritual-a4-maha-bodhi.jpg.asset.json";
+import a5 from "@/assets/spiritual-a5-monks.jpg.asset.json";
+import a6 from "@/assets/spiritual-a6-avukana.jpg.asset.json";
+import a7 from "@/assets/spiritual-a7-meditation.jpg.asset.json";
+import b1 from "@/assets/spiritual-b1-ganesh.jpg.asset.json";
+import b2 from "@/assets/spiritual-b2-murugan.jpg.asset.json";
+import b3 from "@/assets/spiritual-b3-shiva-family.jpg.asset.json";
 
 export type ConceptSection = {
   eyebrow?: string;
@@ -10,6 +19,7 @@ export type ConceptSection = {
   chants?: string[];
   image?: string;
   alt?: string;
+  gallery?: { src: string; alt: string }[];
 };
 
 export type ConceptDetail = {
@@ -38,8 +48,16 @@ export const CONCEPT_DETAILS: Record<string, ConceptDetail> = {
           "With love, respect, and personal care, we value every step of your sacred journey — giving devotees the opportunity to worship, reflect, meditate, and experience the true spirit of Buddhist heritage.",
         ],
         chants: ["Namo Buddhaya", "Theruwan Saranai!"],
-        image: stupa.url,
-        alt: "Ancient white stupa at Anuradhapura, a sacred Buddhist pilgrimage site in Sri Lanka",
+        image: a1.url,
+        alt: "Temple of the Sacred Tooth Relic illuminated at night in Kandy",
+        gallery: [
+          { src: a2.url, alt: "Ruwanwelisaya stupa in Anuradhapura" },
+          { src: a3.url, alt: "Samadhi Buddha statue with flower offerings, Anuradhapura" },
+          { src: a4.url, alt: "Jaya Sri Maha Bodhi sacred bo tree, Anuradhapura" },
+          { src: a5.url, alt: "Buddhist monks walking down forest temple steps" },
+          { src: a6.url, alt: "Avukana standing Buddha statue carved from rock" },
+          { src: a7.url, alt: "Monk meditating beneath an ancient tree" },
+        ],
       },
       {
         eyebrow: "B",
@@ -50,8 +68,13 @@ export const CONCEPT_DETAILS: Record<string, ConceptDetail> = {
           "We hope every devotee will return to these sacred destinations again and again, blessed with divine grace, happiness, and inner peace.",
         ],
         chants: ["Om Namah Shivaya!", "Om Saravana Bhavaya Namah!"],
-        image: kataragama.url,
-        alt: "Colourful Tamil Hindu kovil at Kataragama dedicated to Lord Murugan",
+        image: b2.url,
+        alt: "Lord Murugan with his peacock, worshipped across Sri Lanka's Hindu kovils",
+        gallery: [
+          { src: b1.url, alt: "Lord Ganesh, the remover of obstacles" },
+          { src: b3.url, alt: "Lord Shiva with Parvati, Ganesh and Murugan" },
+          { src: kataragama.url, alt: "Kataragama Murugan kovil in southern Sri Lanka" },
+        ],
       },
     ],
     promise: {

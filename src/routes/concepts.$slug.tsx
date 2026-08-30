@@ -108,8 +108,20 @@ function TripDetail() {
                   ) : null}
                 </Reveal>
               </div>
+              {s.gallery?.length ? (
+                <div className="section-x mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {s.gallery.map((g, i) => (
+                    <Reveal key={g.src} delay={(i % 3) * 90}>
+                      <div className="photo-zoom relative isolate aspect-[4/3] overflow-hidden rounded-xl bg-ink">
+                        <img src={g.src} alt={g.alt} loading="lazy" className="photo-inner absolute inset-0 size-full object-cover" />
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              ) : null}
             </section>
           ))}
+
 
           {gallery?.length ? (
             <section className="section-x pb-4">
