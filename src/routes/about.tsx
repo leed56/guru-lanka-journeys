@@ -142,7 +142,7 @@ function About() {
       <section className="bg-sand-cream py-14 md:py-20">
         <div className="section-x">
           <Reveal>
-            <h2 className="type-h2">What we stand for</h2>
+            <h2 className="type-h2">Our Strength</h2>
           </Reveal>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {VALUES.map((v, i) => (
