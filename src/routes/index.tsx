@@ -171,7 +171,7 @@ function Home() {
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="type-h3">{c.name}</h3>
                     <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.line}</p>
-                    <Link to="/trips/$slug" params={{ slug: c.slug }} className="btn-outline mt-5 text-ocean-teal">
+                    <Link to="/concepts/$slug" params={{ slug: c.slug }} className="btn-outline mt-5 text-ocean-teal">
                       More info
                     </Link>
                   </div>

@@ -6,7 +6,7 @@ import { StickyContactBar } from "@/components/site/StickyContactBar";
 import { COLLECTIONS } from "@/data/site";
 import { conceptImage } from "@/data/conceptImages";
 
-export const Route = createFileRoute("/trips")({
+export const Route = createFileRoute("/concepts")({
   head: () => ({
     meta: [
       { title: "10 Tour Concepts — Ready-Made Sri Lanka Trips | AM Travel's Guru Lanka" },
@@ -57,7 +57,7 @@ function Trips() {
                   <p className="type-caption text-muted-foreground">{c.days}</p>
                   <h2 className="type-h3 mt-1">{c.name}</h2>
                   <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.line}</p>
-                  <Link to="/trips/$slug" params={{ slug: c.slug }} className="btn-outline mt-5 text-ocean-teal">
+                  <Link to="/concepts/$slug" params={{ slug: c.slug }} className="btn-outline mt-5 text-ocean-teal">
                     More info
                   </Link>
                 </div>

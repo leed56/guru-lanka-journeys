@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConceptsRouteImport } from './routes/concepts'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as ExploreRouteImport } from './routes/explore'
@@ -18,13 +19,17 @@ import { Route as ForPartnersRouteImport } from './routes/for-partners'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as StyleGuideRouteImport } from './routes/style-guide'
-import { Route as TripsRouteImport } from './routes/trips'
+import { Route as ConceptsSlugRouteImport } from './routes/concepts.$slug'
 import { Route as DiscoverSlugRouteImport } from './routes/discover.$slug'
-import { Route as TripsSlugRouteImport } from './routes/trips.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConceptsRoute = ConceptsRouteImport.update({
+  id: '/concepts',
+  path: '/concepts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -67,24 +72,20 @@ const StyleGuideRoute = StyleGuideRouteImport.update({
   path: '/style-guide',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TripsRoute = TripsRouteImport.update({
-  id: '/trips',
-  path: '/trips',
-  getParentRoute: () => rootRouteImport,
+const ConceptsSlugRoute = ConceptsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ConceptsRoute,
 } as any)
 const DiscoverSlugRoute = DiscoverSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => DiscoverRoute,
 } as any)
-const TripsSlugRoute = TripsSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => TripsRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/concepts': typeof ConceptsRouteWithChildren
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
@@ -93,12 +94,12 @@ export interface FileRoutesByFullPath {
   '/journey': typeof JourneyRoute
   '/packages': typeof PackagesRoute
   '/style-guide': typeof StyleGuideRoute
-  '/trips': typeof TripsRouteWithChildren
+  '/concepts/$slug': typeof ConceptsSlugRoute
   '/discover/$slug': typeof DiscoverSlugRoute
-  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/concepts': typeof ConceptsRouteWithChildren
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
@@ -107,13 +108,13 @@ export interface FileRoutesByTo {
   '/journey': typeof JourneyRoute
   '/packages': typeof PackagesRoute
   '/style-guide': typeof StyleGuideRoute
-  '/trips': typeof TripsRouteWithChildren
+  '/concepts/$slug': typeof ConceptsSlugRoute
   '/discover/$slug': typeof DiscoverSlugRoute
-  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/concepts': typeof ConceptsRouteWithChildren
   '/contact': typeof ContactRoute
   '/discover': typeof DiscoverRouteWithChildren
   '/explore': typeof ExploreRoute
@@ -122,14 +123,14 @@ export interface FileRoutesById {
   '/journey': typeof JourneyRoute
   '/packages': typeof PackagesRoute
   '/style-guide': typeof StyleGuideRoute
-  '/trips': typeof TripsRouteWithChildren
+  '/concepts/$slug': typeof ConceptsSlugRoute
   '/discover/$slug': typeof DiscoverSlugRoute
-  '/trips/$slug': typeof TripsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/concepts'
     | '/contact'
     | '/discover'
     | '/explore'
@@ -138,12 +139,12 @@ export interface FileRouteTypes {
     | '/journey'
     | '/packages'
     | '/style-guide'
-    | '/trips'
+    | '/concepts/$slug'
     | '/discover/$slug'
-    | '/trips/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/concepts'
     | '/contact'
     | '/discover'
     | '/explore'
@@ -152,12 +153,12 @@ export interface FileRouteTypes {
     | '/journey'
     | '/packages'
     | '/style-guide'
-    | '/trips'
+    | '/concepts/$slug'
     | '/discover/$slug'
-    | '/trips/$slug'
   id:
     | '__root__'
     | '/'
+    | '/concepts'
     | '/contact'
     | '/discover'
     | '/explore'
@@ -166,13 +167,13 @@ export interface FileRouteTypes {
     | '/journey'
     | '/packages'
     | '/style-guide'
-    | '/trips'
+    | '/concepts/$slug'
     | '/discover/$slug'
-    | '/trips/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConceptsRoute: typeof ConceptsRouteWithChildren
   ContactRoute: typeof ContactRoute
   DiscoverRoute: typeof DiscoverRouteWithChildren
   ExploreRoute: typeof ExploreRoute
@@ -181,7 +182,6 @@ export interface RootRouteChildren {
   JourneyRoute: typeof JourneyRoute
   PackagesRoute: typeof PackagesRoute
   StyleGuideRoute: typeof StyleGuideRoute
-  TripsRoute: typeof TripsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -191,6 +191,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concepts': {
+      id: '/concepts'
+      path: '/concepts'
+      fullPath: '/concepts'
+      preLoaderRoute: typeof ConceptsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -249,12 +256,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StyleGuideRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/trips': {
-      id: '/trips'
-      path: '/trips'
-      fullPath: '/trips'
-      preLoaderRoute: typeof TripsRouteImport
-      parentRoute: typeof rootRouteImport
+    '/concepts/$slug': {
+      id: '/concepts/$slug'
+      path: '/$slug'
+      fullPath: '/concepts/$slug'
+      preLoaderRoute: typeof ConceptsSlugRouteImport
+      parentRoute: typeof ConceptsRoute
     }
     '/discover/$slug': {
       id: '/discover/$slug'
@@ -263,15 +270,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiscoverSlugRouteImport
       parentRoute: typeof DiscoverRoute
     }
-    '/trips/$slug': {
-      id: '/trips/$slug'
-      path: '/$slug'
-      fullPath: '/trips/$slug'
-      preLoaderRoute: typeof TripsSlugRouteImport
-      parentRoute: typeof TripsRoute
-    }
   }
 }
+
+interface ConceptsRouteChildren {
+  ConceptsSlugRoute: typeof ConceptsSlugRoute
+}
+
+const ConceptsRouteChildren: ConceptsRouteChildren = {
+  ConceptsSlugRoute: ConceptsSlugRoute,
+}
+
+const ConceptsRouteWithChildren = ConceptsRoute._addFileChildren(
+  ConceptsRouteChildren,
+)
 
 interface DiscoverRouteChildren {
   DiscoverSlugRoute: typeof DiscoverSlugRoute
@@ -285,18 +297,9 @@ const DiscoverRouteWithChildren = DiscoverRoute._addFileChildren(
   DiscoverRouteChildren,
 )
 
-interface TripsRouteChildren {
-  TripsSlugRoute: typeof TripsSlugRoute
-}
-
-const TripsRouteChildren: TripsRouteChildren = {
-  TripsSlugRoute: TripsSlugRoute,
-}
-
-const TripsRouteWithChildren = TripsRoute._addFileChildren(TripsRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConceptsRoute: ConceptsRouteWithChildren,
   ContactRoute: ContactRoute,
   DiscoverRoute: DiscoverRouteWithChildren,
   ExploreRoute: ExploreRoute,
@@ -305,7 +308,6 @@ const rootRouteChildren: RootRouteChildren = {
   JourneyRoute: JourneyRoute,
   PackagesRoute: PackagesRoute,
   StyleGuideRoute: StyleGuideRoute,
-  TripsRoute: TripsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
