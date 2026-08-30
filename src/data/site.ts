@@ -159,7 +159,7 @@ export type Destination = {
 export const DESTINATIONS: Destination[] = [
   { id: "jaffna", name: "Jaffna", region: "North", x: 76, y: 58, interests: ["culture", "spiritual"], blurb: "The northern capital: palmyrah, libraries, its own kitchen and its own accent. Slow, proud and unlike anywhere else on the island." },
   { id: "nallur", name: "Nallur", region: "North", x: 86, y: 68, interests: ["spiritual", "culture"], blurb: "The great Hindu temple of the north, gold-lit at dusk and overwhelming during its August festival." },
-  { id: "nagadeepa", name: "Nagadeepa", region: "North", x: 32, y: 68, interests: ["spiritual"], blurb: "An island pilgrimage site reached by ferry, sacred to Buddhists and Hindus alike." },
+  { id: "nagadeepa", name: "Nagadeepa", region: "North", x: 32, y: 68, interests: ["spiritual"], blurb: "Visit this sacred island of ancient Buddhist heritage, peaceful temples, and spiritual beauty surrounded by the blue waters of Jaffna." },
   { id: "delft", name: "Delft", region: "North", x: 19, y: 84, interests: ["culture"], blurb: "Step into a world of wild ponies, ancient stone walls, baobab trees, and unforgettable island landscapes shaped by centuries of history." },
   { id: "trincomalee", name: "Trincomalee", region: "East", x: 274, y: 241, interests: ["beach", "spiritual"], blurb: "One of the world's great natural harbours, with a cliff-top temple and whales offshore in season." },
   { id: "nilaveli", name: "Nilaveli", region: "East", x: 269, y: 222, interests: ["beach"], blurb: "Wide pale sand and easy snorkelling out at Pigeon Island." },
