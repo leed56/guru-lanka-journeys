@@ -33,7 +33,7 @@ function ForAgents() {
       <section className="bg-ocean-teal py-16 text-sand-cream md:py-24">
         <div className="section-x max-w-3xl">
           <p className="type-caption text-spice-gold">Become our B2B partner</p>
-          <h1 className="type-h1 mt-3">Grow your Sri Lanka business with us</h1>
+          <h1 className="type-h1 mt-3">Tie up with us as a Business Partner</h1>
           <p className="type-body mt-4 opacity-85">
             We're the ground operator, you keep the client. Everything below is being rolled out for
             registered agents — register now and we'll switch you on as each piece goes live.
