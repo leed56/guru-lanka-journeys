@@ -6,6 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { StickyContactBar } from "@/components/site/StickyContactBar";
 import { COLLECTIONS } from "@/data/site";
 import { conceptImage } from "@/data/conceptImages";
+import { CONCEPT_GALLERIES, conceptDetail } from "@/data/conceptDetails";
 
 export const Route = createFileRoute("/trips/$slug")({
   loader: ({ params }) => {
@@ -33,6 +34,8 @@ export const Route = createFileRoute("/trips/$slug")({
 
 function TripDetail() {
   const { collection } = Route.useLoaderData();
+  const detail = conceptDetail(collection.slug);
+  const gallery = CONCEPT_GALLERIES[collection.slug];
 
   return (
     <div className="pb-28 md:pb-0">
