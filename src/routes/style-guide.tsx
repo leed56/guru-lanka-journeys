@@ -14,7 +14,7 @@ export const Route = createFileRoute("/style-guide")({
 });
 
 const SWATCHES = [
-  { name: "ocean-teal", cls: "bg-ocean-teal", hex: "#0B4F4A" },
+  { name: "ocean-teal", cls: "bg-ocean-teal", hex: "#14274E" },
   { name: "tea-green", cls: "bg-tea-green", hex: "#4C7A57" },
   { name: "spice-gold", cls: "bg-spice-gold", hex: "#E0A458" },
   { name: "sand-cream", cls: "bg-sand-cream", hex: "#F6EFE3" },
