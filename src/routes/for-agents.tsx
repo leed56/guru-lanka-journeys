@@ -35,8 +35,8 @@ function ForAgents() {
           <p className="type-caption text-spice-gold">B2B PARTNER</p>
           <h1 className="type-h1 mt-3">Tie up with us as a Business Partner</h1>
           <p className="type-body mt-4 opacity-85">
-            We're the ground operator, you keep the client. Everything below is being rolled out for
-            registered agents — register now and we'll switch you on as each piece goes live.
+            We’re your trusted ground operator—you keep the client, we handle the rest. Register now as
+            a partner and unlock our growing suite of services as they go live.
           </p>
         </div>
       </section>
