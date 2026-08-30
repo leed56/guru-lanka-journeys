@@ -160,7 +160,7 @@ export const DESTINATIONS: Destination[] = [
   { id: "jaffna", name: "Jaffna", region: "North", x: 76, y: 58, interests: ["culture", "spiritual"], blurb: "The northern capital: palmyrah, libraries, its own kitchen and its own accent. Slow, proud and unlike anywhere else on the island." },
   { id: "nallur", name: "Nallur", region: "North", x: 86, y: 68, interests: ["spiritual", "culture"], blurb: "The great Hindu temple of the north, gold-lit at dusk and overwhelming during its August festival." },
   { id: "nagadeepa", name: "Nagadeepa", region: "North", x: 32, y: 68, interests: ["spiritual"], blurb: "An island pilgrimage site reached by ferry, sacred to Buddhists and Hindus alike." },
-  { id: "delft", name: "Delft", region: "North", x: 19, y: 84, interests: ["culture"], blurb: "Coral-walled lanes, wild ponies and Dutch ruins on a flat windswept island." },
+  { id: "delft", name: "Delft", region: "North", x: 19, y: 84, interests: ["culture"], blurb: "Step into a world of wild ponies, ancient stone walls, baobab trees, and unforgettable island landscapes shaped by centuries of history." },
   { id: "trincomalee", name: "Trincomalee", region: "East", x: 274, y: 241, interests: ["beach", "spiritual"], blurb: "One of the world's great natural harbours, with a cliff-top temple and whales offshore in season." },
   { id: "nilaveli", name: "Nilaveli", region: "East", x: 269, y: 222, interests: ["beach"], blurb: "Wide pale sand and easy snorkelling out at Pigeon Island." },
   { id: "pasikuda", name: "Pasikuda", region: "East", x: 331, y: 351, interests: ["beach", "wellness"], blurb: "A shallow bay you can wade far out into — the calmest swimming water in the country." },
