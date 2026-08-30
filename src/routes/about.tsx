@@ -64,7 +64,6 @@ function About() {
       <section className="section-x py-14 md:py-20">
         <Reveal className="max-w-3xl">
           <h2 className="type-h2">Who we are</h2>
-          <p className="type-body mt-4">
           <p className="type-body mt-4 whitespace-pre-line">
             {`AM TRAVEL’S GURU LANKA is a newly launched Sri Lankan travel and tourism venture created with a clear purpose — to introduce a smarter, more meaningful and uniquely Sri Lankan way of experiencing travel.
 We are developing a new generation of tourism concepts that blend Sri Lanka’s timeless traditions, rich culture, spirituality, nature, hospitality and heritage with innovative business models, modern travel solutions and carefully designed experiences.
