@@ -8,7 +8,7 @@ import { COLLECTIONS } from "@/data/site";
 import { conceptImage } from "@/data/conceptImages";
 import { CONCEPT_GALLERIES, conceptDetail } from "@/data/conceptDetails";
 
-export const Route = createFileRoute("/trips/$slug")({
+export const Route = createFileRoute("/concepts/$slug")({
   loader: ({ params }) => {
     const collection = COLLECTIONS.find((c) => c.slug === params.slug);
     if (!collection) throw notFound();
@@ -53,7 +53,7 @@ function TripDetail() {
 
       <div className="section-x -mt-16 md:-mt-24">
         <div className="card-surface max-w-3xl p-6 md:p-10">
-          <Link to="/trips" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-ocean-teal">
+          <Link to="/concepts" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-ocean-teal">
             <ArrowLeft className="size-4" /> All tour concepts
           </Link>
           <p className="type-caption mt-4 text-tea-green">{collection.days}</p>
