@@ -17,7 +17,7 @@ export const Route = createFileRoute("/trips/$slug")({
       return { meta: [{ title: "Unavailable" }, { name: "robots", content: "noindex" }] };
     }
     const { collection } = loaderData;
-    const title = `${collection.name} Collection — ${collection.days} in Sri Lanka | AM Travel's Guru Lanka`;
+    const title = `${collection.name} Tour Concept — ${collection.days} in Sri Lanka | AM Travel's Guru Lanka`;
     return {
       meta: [
         { title },
@@ -35,12 +35,12 @@ function TripDetail() {
 
   return (
     <div className="pb-28 md:pb-0">
-      <Placeholder label={`${collection.name} Collection`} ratio="aspect-[16/10] md:aspect-[21/8]" className="hero-fade" />
+      <Placeholder label={`${collection.name} Tour Concept`} ratio="aspect-[16/10] md:aspect-[21/8]" className="hero-fade" />
 
       <div className="section-x -mt-16 md:-mt-24">
         <div className="card-surface max-w-3xl p-6 md:p-10">
           <Link to="/trips" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-ocean-teal">
-            <ArrowLeft className="size-4" /> All collections
+            <ArrowLeft className="size-4" /> All tour concepts
           </Link>
           <p className="type-caption mt-4 text-tea-green">{collection.days}</p>
           <h1 className="type-h1 mt-2">{collection.name}</h1>
@@ -67,13 +67,13 @@ function TripDetail() {
           <Link to="/journey" search={{ collection: collection.slug }} className="btn-gold">
             Customize this trip
           </Link>
-          <Link to="/contact" search={{ tag: `${collection.name} Collection` }} className="btn-outline text-ocean-teal">
+          <Link to="/contact" search={{ tag: `${collection.name} Tour Concept` }} className="btn-outline text-ocean-teal">
             Ask a question
           </Link>
         </Reveal>
       </section>
 
-      <StickyContactBar tag={`${collection.name} Collection`} />
+      <StickyContactBar tag={`${collection.name} Tour Concept`} />
     </div>
   );
 }

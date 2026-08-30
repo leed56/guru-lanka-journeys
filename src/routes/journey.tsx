@@ -216,7 +216,7 @@ function Journey() {
         ) : (
           <div key={step} className="card-surface animate-in fade-in slide-in-from-bottom-4 mt-8 p-7 duration-500 md:p-10">
             {preset && step === 0 ? (
-              <p className="type-caption mb-4 text-tea-green">Starting from the {preset.name} Collection</p>
+              <p className="type-caption mb-4 text-tea-green">Starting from the {preset.name} Tour Concept</p>
             ) : null}
             <h1 className="type-h2">{steps[step]!.q}</h1>
             <div className="mt-7">{steps[step]!.body}</div>
