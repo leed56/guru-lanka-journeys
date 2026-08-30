@@ -5,7 +5,7 @@ import dambulla from "@/assets/destination-dambulla.jpg.asset.json";
 import delftIsland from "@/assets/destination-delft.jpg.asset.json";
 import ella from "@/assets/destination-ella-nine-arch.jpg.asset.json";
 import galle from "@/assets/destination-galle.jpg.asset.json";
-import haputale from "@/assets/destination-haputale.jpg.asset.json";
+import haputale from "@/assets/destination-haputale-adisham.jpg.asset.json";
 import jaffna from "@/assets/destination-jaffna-city.jpg.asset.json";
 import kalpitiya from "@/assets/destination-kalpitiya-dolphins.jpg.asset.json";
 import kandy from "@/assets/destination-kandy-perahera.webp.asset.json";
