@@ -162,7 +162,7 @@ export const DESTINATIONS: Destination[] = [
   { id: "nagadeepa", name: "Nagadeepa", region: "North", x: 32, y: 68, interests: ["spiritual"], blurb: "Visit this sacred island of ancient Buddhist heritage, peaceful temples, and spiritual beauty surrounded by the blue waters of Jaffna." },
   { id: "delft", name: "Delft", region: "North", x: 19, y: 84, interests: ["culture"], blurb: "Step into a world of wild ponies, ancient stone walls, baobab trees, and unforgettable island landscapes shaped by centuries of history." },
   { id: "trincomalee", name: "Trincomalee", region: "East", x: 274, y: 241, interests: ["beach", "spiritual"], blurb: "One of the world's great natural harbours, with a cliff-top temple and whales offshore in season." },
-  { id: "nilaveli", name: "Nilaveli", region: "East", x: 269, y: 222, interests: ["beach"], blurb: "Wide pale sand and easy snorkelling out at Pigeon Island." },
+  { id: "nilaveli", name: "Nilaveli", region: "East", x: 269, y: 222, interests: ["beach"], blurb: "Relax on one of Sri Lanka’s most beautiful beaches, with crystal-clear waters, golden sands, and easy access to Pigeon Island." },
   { id: "pasikuda", name: "Pasikuda", region: "East", x: 331, y: 351, interests: ["beach", "wellness"], blurb: "A shallow bay you can wade far out into — the calmest swimming water in the country." },
   { id: "arugam-bay", name: "Arugam Bay", region: "East", x: 377, y: 534, interests: ["beach", "wildlife"], blurb: "Sri Lanka's surf town, with lagoon safaris and elephants on the road home." },
   { id: "galle", name: "Galle", region: "South", x: 108, y: 666, interests: ["culture", "beach"], blurb: "A lived-in Dutch fort of ramparts, cafés and coral-stone houses above the sea." },
