@@ -27,11 +27,9 @@ function ForPartners() {
       <section className="bg-tea-green py-16 text-sand-cream md:py-24">
         <div className="section-x max-w-3xl">
           <p className="type-caption text-spice-gold">Join our travel network</p>
-          <h1 className="type-h1 mt-3">List your business with Guru Lanka</h1>
+          <h1 className="type-h1 mt-3">We invite our reliable service&nbsp; providers to join us and grow together</h1>
           <p className="type-body mt-4 opacity-90">
-            We build journeys for travellers who stay longer and ask for the real thing. If you run a
-            hotel, villa, vehicle, kitchen, jeep or treatment room worth recommending, tell us about
-            it — our planners work from a shortlist they trust.
+            We welcome all vehicle fleets , hotels, and (budget up to&nbsp; to 5 star&nbsp; hotels) tour guides, and specialists in&nbsp; the industry.
           </p>
         </div>
       </section>
