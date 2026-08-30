@@ -8,14 +8,14 @@ import { COLLECTIONS } from "@/data/site";
 export const Route = createFileRoute("/trips")({
   head: () => ({
     meta: [
-      { title: "Ready-Made Sri Lanka Trips — Guru Collections | AM Travel's Guru Lanka" },
+      { title: "10 Tour Concepts — Ready-Made Sri Lanka Trips | AM Travel's Guru Lanka" },
       {
         name: "description",
         content:
-          "Eight ready-made Sri Lanka itineraries: Beach, Hill Country, Wildlife, Spiritual, Wellness, Romance, Family and Eco. Take one as-is or customise it.",
+          "10 Tour Concepts: Spiritual, Cultural & Heritage, Sports, Women's Friendship, Romantic, Fun & Leisure, Nature Trails, Business, MICE and Happy Retirement. Take one as-is or customise it.",
       },
-      { property: "og:title", content: "Ready-Made Sri Lanka Trips — Guru Collections" },
-      { property: "og:description", content: "Eight routes we've run many times. Change anything you like." },
+      { property: "og:title", content: "10 Tour Concepts — Ready-Made Sri Lanka Trips" },
+      { property: "og:description", content: "Ten tour concepts we've run many times. Change anything you like." },
     ],
   }),
   component: Trips,
@@ -26,10 +26,10 @@ function Trips() {
     <div className="pb-28 md:pb-0">
       <section className="bg-sand-cream py-16 md:py-24">
         <div className="section-x">
-          <p className="type-caption text-tea-green">Guru Collections</p>
+          <p className="type-caption text-tea-green">10 Tour Concepts</p>
           <h1 className="type-h1 mt-3 max-w-2xl">Would a ready-made trip do?</h1>
           <p className="type-body mt-4 max-w-xl text-muted-foreground">
-            Eight routes we run again and again, each one already tuned for driving time, season and
+            Ten tour concepts we run again and again, each one already tuned for driving time, season and
             where to slow down.
           </p>
         </div>
@@ -40,7 +40,7 @@ function Trips() {
           {COLLECTIONS.map((c, idx) => (
             <Reveal key={c.slug} delay={(idx % 4) * 90}>
               <article className="card-surface hover-lift flex h-full flex-col">
-                <Placeholder label={`${c.name} Collection`} />
+                <Placeholder label={`${c.name} Tour Concept`} />
                 <div className="flex flex-1 flex-col p-5">
                   <p className="type-caption text-muted-foreground">{c.days}</p>
                   <h2 className="type-h3 mt-1">{c.name}</h2>
@@ -55,7 +55,7 @@ function Trips() {
         </div>
       </section>
 
-      <StickyContactBar tag="Guru Collections" />
+      <StickyContactBar tag="10 Tour Concepts" />
     </div>
   );
 }

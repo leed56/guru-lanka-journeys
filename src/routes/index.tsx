@@ -155,7 +155,7 @@ function Home() {
             {COLLECTIONS.map((c, idx) => (
               <Reveal key={c.slug} delay={(idx % 4) * 90} className="w-[76vw] shrink-0 snap-start sm:w-[46vw] md:w-auto">
                 <article className="card-surface hover-lift flex h-full flex-col">
-                  <Placeholder label={`${c.name} Collection`} />
+                  <Placeholder label={`${c.name} Tour Concept`} />
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="type-h3">{c.name}</h3>
                     <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.line}</p>
