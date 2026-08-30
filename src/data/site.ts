@@ -10,6 +10,7 @@ export const BRAND = {
 
 export const NAV = [
   
+  { label: "About Us", to: "/about" },
   { label: "Explore Map", to: "/explore" },
   { label: "Concepts", to: "/concepts" },
   { label: "Packages", to: "/packages" },
