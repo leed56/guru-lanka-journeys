@@ -59,6 +59,86 @@ function TripDetail() {
         </div>
       </div>
 
+      {detail ? (
+        <>
+          <section className="section-x py-14 md:py-20">
+            <Reveal>
+              <p className="type-caption text-spice-gold">{detail.eyebrow}</p>
+              <h2 className="type-h2 mt-3 max-w-2xl">{detail.heading}</h2>
+              <div className="mt-5 max-w-2xl space-y-4">
+                {detail.lead.map((p) => (
+                  <p key={p} className="type-body text-muted-foreground">{p}</p>
+                ))}
+              </div>
+            </Reveal>
+          </section>
+
+          {detail.sections.map((s, idx) => (
+            <section
+              key={s.title}
+              className={idx % 2 === 0 ? "bg-sand-cream py-14 md:py-20" : "py-14 md:py-20"}
+            >
+              <div className="section-x grid items-center gap-8 md:grid-cols-2">
+                <Reveal className={idx % 2 === 1 ? "md:order-2" : undefined}>
+                  {s.image ? (
+                    <div className="photo-zoom relative isolate aspect-[4/3] overflow-hidden rounded-xl bg-ink">
+                      <img src={s.image} alt={s.alt ?? s.title} loading="lazy" className="photo-inner absolute inset-0 size-full object-cover" />
+                    </div>
+                  ) : (
+                    <Placeholder label={s.title} />
+                  )}
+                </Reveal>
+                <Reveal delay={100}>
+                  {s.eyebrow ? <p className="type-caption text-tea-green">{s.eyebrow}</p> : null}
+                  <h3 className="type-h2 mt-2">{s.title}</h3>
+                  <div className="mt-4 space-y-4">
+                    {s.paragraphs.map((p) => (
+                      <p key={p} className="type-body text-muted-foreground">{p}</p>
+                    ))}
+                  </div>
+                  {s.chants?.length ? (
+                    <p className="type-h3 mt-6 text-spice-gold">
+                      {s.chants.map((c) => (
+                        <span key={c} className="block">{c}</span>
+                      ))}
+                    </p>
+                  ) : null}
+                </Reveal>
+              </div>
+            </section>
+          ))}
+
+          {gallery?.length ? (
+            <section className="section-x pb-4">
+              <div className="grid gap-4 sm:grid-cols-3">
+                {gallery.map((g, i) => (
+                  <Reveal key={g.src} delay={i * 90}>
+                    <div className="photo-zoom relative isolate aspect-[4/3] overflow-hidden rounded-xl bg-ink">
+                      <img src={g.src} alt={g.alt} loading="lazy" className="photo-inner absolute inset-0 size-full object-cover" />
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          <section className="mt-14 bg-ocean-teal py-14 text-sand-cream md:py-20">
+            <div className="section-x max-w-2xl">
+              <Reveal>
+                <h2 className="type-h2">{detail.promise.title}</h2>
+                <div className="mt-5 space-y-2">
+                  {detail.promise.lines.map((l) => (
+                    <p key={l} className="type-body opacity-90">{l}</p>
+                  ))}
+                </div>
+                <p className="type-h3 mt-7 text-spice-gold">{detail.promise.signature}</p>
+                <p className="type-caption mt-1">{detail.promise.tagline}</p>
+              </Reveal>
+            </div>
+          </section>
+        </>
+      ) : null}
+
       <section className="section-x py-14 md:py-20">
         <Reveal>
           <h2 className="type-h2">The route</h2>
@@ -83,6 +163,7 @@ function TripDetail() {
           </Link>
         </Reveal>
       </section>
+
 
       <StickyContactBar tag={`${collection.name} Tour Concept`} />
     </div>
