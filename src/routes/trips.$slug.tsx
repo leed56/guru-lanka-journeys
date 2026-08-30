@@ -41,7 +41,7 @@ function TripDetail() {
           <img
             src={conceptImage(collection.slug)}
             alt={`${collection.name} tour concept in Sri Lanka`}
-            className="absolute inset-0 size-full object-contain md:object-cover md:object-top"
+            className="absolute inset-0 size-full object-contain"
           />
         </div>
       ) : (
