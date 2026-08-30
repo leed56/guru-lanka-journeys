@@ -19,7 +19,7 @@ import pasikuda from "@/assets/destination-pasikuda-aerial.webp.asset.json";
 import polonnaruwa from "@/assets/destination-polonnaruwa-gal-vihara.jpg.asset.json";
 import sigiriya from "@/assets/destination-sigiriya.jpg.asset.json";
 import trincomalee from "@/assets/destination-trincomalee-koneswaram.jpg.asset.json";
-import weligama from "@/assets/destination-weligama.jpg.asset.json";
+import weligama from "@/assets/destination-weligama-palms.jpg.asset.json";
 import bentota from "@/assets/destination-bentota-turtle.jpg.asset.json";
 import galleBeach from "@/assets/Galle_Beach.jpg.asset.json";
 import teaPlantations from "@/assets/Tea_Plantations.jpg.asset.json";
