@@ -2,6 +2,7 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ChevronRight } from "lucide-react";
 
 import { Placeholder } from "@/components/site/Placeholder";
+import { GalleryGrid } from "@/components/site/GalleryGrid";
 import { Reveal } from "@/components/site/Reveal";
 import { StickyContactBar } from "@/components/site/StickyContactBar";
 import { COLLECTIONS } from "@/data/site";
@@ -109,14 +110,8 @@ function TripDetail() {
                 </Reveal>
               </div>
               {s.gallery?.length ? (
-                <div className="section-x mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {s.gallery.map((g, i) => (
-                    <Reveal key={g.src} delay={(i % 3) * 90}>
-                      <div className="photo-zoom relative isolate aspect-[4/3] overflow-hidden rounded-xl bg-ink">
-                        <img src={g.src} alt={g.alt} loading="lazy" className="photo-inner absolute inset-0 size-full object-cover" />
-                      </div>
-                    </Reveal>
-                  ))}
+                <div className="section-x mt-8">
+                  <GalleryGrid items={s.gallery} />
                 </div>
               ) : null}
             </section>
@@ -125,15 +120,7 @@ function TripDetail() {
 
           {gallery?.length ? (
             <section className="section-x pb-4">
-              <div className="grid gap-4 sm:grid-cols-3">
-                {gallery.map((g, i) => (
-                  <Reveal key={g.src} delay={i * 90}>
-                    <div className="photo-zoom relative isolate aspect-[4/3] overflow-hidden rounded-xl bg-ink">
-                      <img src={g.src} alt={g.alt} loading="lazy" className="photo-inner absolute inset-0 size-full object-cover" />
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
+              <GalleryGrid items={gallery} columns="sm:grid-cols-3" />
             </section>
           ) : null}
 
