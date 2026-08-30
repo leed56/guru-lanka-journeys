@@ -65,15 +65,30 @@ function About() {
         <Reveal className="max-w-3xl">
           <h2 className="type-h2">Who we are</h2>
           <p className="type-body mt-4">
-            {BRAND.name} is a Sri Lankan travel company built by people who grew up on this island — in
-            the tea hills, along the coast and in the old sacred cities. We plan and operate journeys on
-            the ground ourselves, so what we promise is what you actually get.
+          <p className="type-body mt-4 whitespace-pre-line">
+            {`AM TRAVEL’S GURU LANKA is a newly launched Sri Lankan travel and tourism venture created with a clear purpose — to introduce a smarter, more meaningful and uniquely Sri Lankan way of experiencing travel.
+We are developing a new generation of tourism concepts that blend Sri Lanka’s timeless traditions, rich culture, spirituality, nature, hospitality and heritage with innovative business models, modern travel solutions and carefully designed experiences.
+Our vision is simple: to make every journey more than a trip — to make it a memorable experience.
+OUR DIFFERENCE
+We believe that modern travellers are looking for more than sightseeing. They want experiences, connections, discovery, comfort, authenticity and unforgettable memories.
+That is why AM TRAVEL’S GURU LANKA is developing 10 unique tourism and business concepts, designed to create exciting opportunities for both our international travel partners and individual travellers.
+From spiritual and cultural journeys to wellness, heritage, sports, leisure, business and community-based experiences, our concepts are designed to showcase the many dimensions of Sri Lanka in fresh and innovative ways.
+PROFESSIONAL SERVICE • SRI LANKAN HOSPITALITY
+Although we are a newly launched business, we are building our operation around experienced tourism and service professionals who understand the importance of quality, reliability and personal attention.
+Our team is committed to providing a service-oriented travel experience, from the first enquiry to the final moment of the journey.
+We want every guest to leave Sri Lanka carrying something special — beautiful memories, genuine friendships and a lasting feeling of Sri Lankan warmth and hospitality.
+OUR PROMISE
+We don't simply arrange journeys.
+We create experiences.
+We connect people.
+We build partnerships.
+We share Sri Lanka with the world.
+With a fresh vision, innovative concepts and a strong commitment to professional service, AM TRAVEL’S GURU LANKA is ready to become a trusted and distinctive tourism partner for Sri Lanka and the international travel community.
+DISCOVER SRI LANKA DIFFERENTLY.
+EXPERIENCE THE SRI LANKAN WAY..`}
           </p>
-          <p className="type-body mt-4">
-            From a single family holiday to a full incentive group, we design the route, choose the stays,
-            arrange the vehicles and stay reachable through the whole trip. Our name says it simply:
-            <em> {BRAND.tagline}</em>.
-          </p>
+          <p className="type-body mt-4 whitespace-pre-line">{`\n`}</p>
+
         </Reveal>
       </section>
 
