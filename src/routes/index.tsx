@@ -157,12 +157,12 @@ function Home() {
               <Reveal key={c.slug} delay={(idx % 4) * 90} className="w-[76vw] shrink-0 snap-start sm:w-[46vw] md:w-auto">
                 <article className="card-surface hover-lift flex h-full flex-col">
                   {conceptImage(c.slug) ? (
-                    <div className="photo-zoom relative isolate aspect-[3/4] overflow-hidden">
+                    <div className="photo-zoom relative isolate aspect-[3/4] overflow-hidden bg-ink">
                       <img
                         src={conceptImage(c.slug)}
                         alt={`${c.name} tour concept in Sri Lanka`}
                         loading="lazy"
-                        className="photo-inner absolute inset-0 size-full object-cover"
+                        className="photo-inner absolute inset-0 size-full object-contain"
                       />
                     </div>
                   ) : (
