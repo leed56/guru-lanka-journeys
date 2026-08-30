@@ -40,7 +40,18 @@ function Trips() {
           {COLLECTIONS.map((c, idx) => (
             <Reveal key={c.slug} delay={(idx % 4) * 90}>
               <article className="card-surface hover-lift flex h-full flex-col">
-                <Placeholder label={`${c.name} Tour Concept`} />
+                {conceptImage(c.slug) ? (
+                  <div className="photo-zoom relative isolate aspect-[3/4] overflow-hidden">
+                    <img
+                      src={conceptImage(c.slug)}
+                      alt={`${c.name} tour concept in Sri Lanka`}
+                      loading="lazy"
+                      className="photo-inner absolute inset-0 size-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <Placeholder label={`${c.name} Tour Concept`} />
+                )}
                 <div className="flex flex-1 flex-col p-5">
                   <p className="type-caption text-muted-foreground">{c.days}</p>
                   <h2 className="type-h3 mt-1">{c.name}</h2>
