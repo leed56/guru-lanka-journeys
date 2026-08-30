@@ -20,7 +20,7 @@ import polonnaruwa from "@/assets/destination-polonnaruwa-gal-vihara.jpg.asset.j
 import sigiriya from "@/assets/destination-sigiriya.jpg.asset.json";
 import trincomalee from "@/assets/destination-trincomalee-koneswaram.jpg.asset.json";
 import weligama from "@/assets/destination-weligama.jpg.asset.json";
-import ayurveda from "@/assets/Ayurveda_wellness.jpg.asset.json";
+import bentota from "@/assets/destination-bentota-turtle.jpg.asset.json";
 import galleBeach from "@/assets/Galle_Beach.jpg.asset.json";
 import teaPlantations from "@/assets/Tea_Plantations.jpg.asset.json";
 
@@ -30,7 +30,7 @@ const imageUrl = (asset: { url: string }) => asset.url;
 export const DESTINATION_IMAGES: Record<string, string> = {
   anuradhapura: imageUrl(anuradhapura),
   "arugam-bay": imageUrl(arugamBay),
-  "bentota-area": imageUrl(ayurveda),
+  "bentota-area": imageUrl(bentota),
   colombo: imageUrl(colombo),
   dambulla: imageUrl(dambulla),
   delft: imageUrl(delftIsland),
