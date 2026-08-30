@@ -59,8 +59,8 @@
   --radius: 0.75rem;
 
   /* Brand materials */
-  --ocean-teal: oklch(0.35 0.062 183.5); /* #0B4F4A */
-  --ocean-teal-deep: oklch(0.27 0.05 183.5);
+  --ocean-teal: oklch(0.32 0.085 264); /* navy blue #14274E */
+  --ocean-teal-deep: oklch(0.25 0.075 264);
   --tea-green: oklch(0.52 0.062 152); /* #4C7A57 */
   --spice-gold: oklch(0.76 0.111 71.5); /* #E0A458 */
   --spice-gold-soft: oklch(0.86 0.062 74);
