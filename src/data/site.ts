@@ -206,15 +206,18 @@ export type Collection = {
 };
 
 export const COLLECTIONS: Collection[] = [
-  { slug: "beach", name: "Beach", line: "Southern sand, warm water and nowhere to be.", days: "7 days", route: ["Colombo", "Bentota", "Unawatuna", "Mirissa", "Weligama", "Tangalle"], intro: "A slow run down the south-west coast, stopping wherever the water is calmest that week." },
-  { slug: "hill-country", name: "Hill Country", line: "Tea, trains and cold mornings.", days: "6 days", route: ["Colombo", "Kandy", "Nuwara Eliya", "Haputale", "Ella"], intro: "Up into the estates by road and back down by train, with time to actually walk the ridges." },
-  { slug: "wildlife", name: "Wildlife", line: "Leopards, elephants and 5am alarms.", days: "8 days", route: ["Colombo", "Dambulla", "Polonnaruwa", "Tangalle", "Arugam Bay"], intro: "Three different parks with three different landscapes, spaced so you're never in a jeep two days running." },
-  { slug: "spiritual", name: "Spiritual", line: "Temples, stupas and quiet hours.", days: "7 days", route: ["Colombo", "Anuradhapura", "Dambulla", "Kandy", "Nallur"], intro: "A pilgrimage route across the island's Buddhist and Hindu heartlands, timed around ceremonies." },
-  { slug: "wellness", name: "Wellness", line: "Ayurveda on a proper schedule.", days: "10 days", route: ["Negombo", "Bentota", "Nuwara Eliya", "Tangalle"], intro: "A doctor-led programme with treatments, diet and rest — long enough to be worth doing." },
-  { slug: "romance", name: "Romance", line: "Two people, one very good week.", days: "7 days", route: ["Colombo", "Galle", "Unawatuna", "Ella", "Kandy"], intro: "Fort evenings, a mountain bungalow and a private car for the whole route." },
-  { slug: "family", name: "Family", line: "Enough to do, nothing too far.", days: "9 days", route: ["Negombo", "Sigiriya", "Kandy", "Bentota", "Colombo"], intro: "Short driving days, a rock to climb, elephants, and a beach at the end of it." },
-  { slug: "eco", name: "Eco", line: "Small lodges, local hands.", days: "8 days", route: ["Colombo", "Kalpitiya", "Polonnaruwa", "Haputale", "Arugam Bay"], intro: "Community-run stays and low-impact transport, with meals cooked where you sleep." },
+  { slug: "spiritual", name: "Spiritual", line: "Temples, stupas and quiet hours.", days: "7 days", route: ["Colombo", "Anuradhapura", "Dambulla", "Kandy", "Nallur"], intro: "A pilgrimage route across the island's Buddhist, Hindu, Christian and Muslim heartlands, timed around ceremonies." },
+  { slug: "cultural-heritage", name: "Cultural & Heritage", line: "Two thousand years of cities.", days: "8 days", route: ["Colombo", "Anuradhapura", "Polonnaruwa", "Sigiriya", "Dambulla", "Kandy"], intro: "The ancient capitals, rock fortresses and living temple towns, with guides who know the stories behind the stone." },
+  { slug: "sports", name: "Sports", line: "Cricket, badminton and fellowship nights.", days: "7 days", route: ["Colombo", "Kandy", "Galle", "Colombo"], intro: "Match fixtures, grounds, practice sessions and evening networking arranged for school, club, old boys' and women's teams." },
+  { slug: "womens-friendship", name: "Women's Friendship", line: "Travel together, safely and easily.", days: "6 days", route: ["Negombo", "Kandy", "Nuwara Eliya", "Bentota"], intro: "Group journeys for OGAs, women's clubs, professional circles and university groups, with female-friendly stays and hosts." },
+  { slug: "romantic", name: "Romantic", line: "Two people, one very good week.", days: "7 days", route: ["Colombo", "Galle", "Unawatuna", "Ella", "Kandy"], intro: "Honeymoons, weddings and getaways — fort evenings, a mountain bungalow and a private car for the whole route." },
+  { slug: "fun-leisure", name: "Fun & Leisure", line: "Beach parties, boats and water sports.", days: "5 days", route: ["Colombo", "Bentota", "Mirissa", "Weligama"], intro: "Twelve- to twenty-four-hour beach experiences, live music, river and sea boat parties, and everything on the water." },
+  { slug: "nature-trails", name: "Nature Trails", line: "Tea, rainforest and wild parks.", days: "8 days", route: ["Colombo", "Kandy", "Nuwara Eliya", "Haputale", "Ella", "Tangalle"], intro: "Hill-country estates, waterfalls, eco lodges and wildlife parks spaced so you're never in a jeep two days running." },
+  { slug: "business", name: "Business", line: "Meet the people who make things here.", days: "5 days", route: ["Colombo", "Kandy", "Colombo"], intro: "Introductions to importers, exporters, entrepreneurs and investors, plus property, workspace and career opportunities." },
+  { slug: "mice", name: "MICE", line: "Meetings, incentives, conferences, events.", days: "4 days", route: ["Colombo", "Bentota", "Kandy"], intro: "Corporate forums, awards nights, incentive tours and tailor-made group programmes with full event handling." },
+  { slug: "happy-retirement", name: "Happy Retirement", line: "Slow days, warm care.", days: "12 days", route: ["Negombo", "Kandy", "Nuwara Eliya", "Bentota", "Tangalle"], intro: "Unhurried itineraries with Ayurveda, gentle walks, comfortable stays and long-stay options for retired travellers." },
 ];
+
 
 /* ---------------- Phase 6 — Exclusive tour packages ---------------- */
 export const PACKAGES: { name: string; items: string[] }[] = [
