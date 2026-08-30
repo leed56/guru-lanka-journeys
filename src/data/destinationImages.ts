@@ -30,7 +30,7 @@ const imageUrl = (asset: { url: string }) => asset.url;
 export const DESTINATION_IMAGES: Record<string, string> = {
   anuradhapura: imageUrl(anuradhapura),
   "arugam-bay": imageUrl(arugamBay),
-  "bentota-area": imageUrl(ayurveda),
+  "bentota-area": imageUrl(bentota),
   colombo: imageUrl(colombo),
   dambulla: imageUrl(dambulla),
   delft: imageUrl(delftIsland),
