@@ -172,7 +172,7 @@ function Home() {
                     <h3 className="type-h3">{c.name}</h3>
                     <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.line}</p>
                     <Link to="/trips/$slug" params={{ slug: c.slug }} className="btn-outline mt-5 text-ocean-teal">
-                      See this trip
+                      More info
                     </Link>
                   </div>
                 </article>
