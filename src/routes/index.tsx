@@ -1,5 +1,5 @@
-import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Quote, Star } from "lucide-react";
 
 import climatesAsset from "@/assets/Nine_climates_in_one_island.jpg.asset.json";
 import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
@@ -243,17 +243,38 @@ function Home() {
       <section className="bg-sand-cream py-16 md:py-24">
         <div className="section-x">
           <Reveal>
-            <h2 className="type-h2">What do travellers say?</h2>
+            <span className="text-xs font-bold uppercase tracking-widest text-tea-green">
+              Guest Experiences
+            </span>
+            <h2 className="type-h2 mt-1">What Our Travellers Say</h2>
           </Reveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((t, idx) => (
               <Reveal key={t.name} delay={idx * 100}>
-                <figure className="card-surface hover-lift h-full p-6">
-                  <Placeholder label={t.name} ratio="aspect-square" className="size-14 overflow-hidden rounded-full" />
-                  <blockquote className="type-body mt-5">“{t.quote}”</blockquote>
-                  <figcaption className="mt-4 text-sm text-muted-foreground">
-                    {t.name} · {t.from}
-                  </figcaption>
+                <figure className="card-surface hover-lift flex h-full flex-col justify-between rounded-3xl border border-border/80 bg-card p-7 shadow-sm">
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-1 text-spice-gold">
+                        {[...Array(5)].map((_, sIdx) => (
+                          <Star key={sIdx} className="size-4 fill-spice-gold" />
+                        ))}
+                      </div>
+                      <Quote className="size-6 text-ocean-teal/20" />
+                    </div>
+                    <blockquote className="type-body mt-5 text-ink leading-relaxed">
+                      “{t.quote}”
+                    </blockquote>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-border/60 flex items-center gap-3">
+                    <div className="flex size-10 items-center justify-center rounded-full bg-ocean-teal/10 text-ocean-teal font-bold text-sm">
+                      {t.name.split(" ").map((n) => n[0]).join("")}
+                    </div>
+                    <div>
+                      <figcaption className="text-sm font-bold text-ink">{t.name}</figcaption>
+                      <span className="text-xs text-muted-foreground">{t.from}</span>
+                    </div>
+                  </div>
                 </figure>
               </Reveal>
             ))}

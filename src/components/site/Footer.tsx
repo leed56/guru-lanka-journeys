@@ -31,11 +31,6 @@ export function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link to="/style-guide" className="text-sm opacity-60 hover:underline">
-                Style guide (dev)
-              </Link>
-            </li>
           </ul>
         </div>
 
