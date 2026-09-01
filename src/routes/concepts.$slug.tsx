@@ -41,11 +41,11 @@ function TripDetail() {
   return (
     <div className="pb-28 md:pb-0">
       {conceptImage(collection.slug) ? (
-        <div className="hero-fade relative isolate aspect-[16/10] overflow-hidden bg-ink md:aspect-[21/8]">
+        <div className="hero-fade relative isolate aspect-[16/10] overflow-hidden bg-muted md:aspect-[21/8]">
           <img
             src={conceptImage(collection.slug)}
             alt={`${collection.name} tour concept in Sri Lanka`}
-            className="absolute inset-0 size-full object-contain"
+            className="absolute inset-0 size-full object-cover object-top"
           />
         </div>
       ) : (
