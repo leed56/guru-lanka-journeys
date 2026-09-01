@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
-import logo from "@/assets/am-logo.jpg.asset.json";
+import logo from "@/assets/am-logo.png";
 import { BRAND, NAV } from "@/data/site";
 
 export function Footer() {
@@ -9,9 +9,13 @@ export function Footer() {
     <footer className="bg-ocean-teal text-sand-cream">
       <div className="section-x grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1.2fr] md:py-20">
         <div>
-          <div className="inline-block rounded-lg bg-background p-3">
-            <img src={logo.url} alt={`${BRAND.name} logo`} className="h-12 w-auto" />
-          </div>
+          <Link to="/" className="inline-block">
+            <img
+              src={logo}
+              alt={`${BRAND.name} logo`}
+              className="h-20 w-auto max-w-[260px] shrink-0 object-contain drop-shadow md:h-24"
+            />
+          </Link>
           <p className="type-h3 mt-5">{BRAND.tagline}</p>
           <p className="mt-2 max-w-sm text-sm opacity-80">{BRAND.brandLine}</p>
           <p className="mt-4 max-w-sm text-sm opacity-80">{BRAND.positioning}</p>
