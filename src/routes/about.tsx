@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Building2, Globe2, UserCheck, Users } from "lucide-react";
 
 import { Reveal } from "@/components/site/Reveal";
 import { BRAND } from "@/data/site";
@@ -26,20 +27,24 @@ export const Route = createFileRoute("/about")({
 
 const VALUES = [
   {
-    title: "New Thoughts",
-    body: "We build itineraries from scratch around your pace, interests and season — never a copy-paste circuit.",
+    icon: Users,
+    title: "Board of Directors",
+    body: "Visionary leadership guiding AM Travel's Guru Lanka with deep industry expertise, strategic governance, and sustainable tourism development.",
   },
   {
-    title: "New Missions",
-    body: "Every journey has a purpose: pilgrimage, celebration, discovery, recovery, or simply rest.",
+    icon: UserCheck,
+    title: "Our Team",
+    body: "Passionate travel consultants, licensed local naturalists, tour coordinators, and hospitality professionals committed to authentic Sri Lankan experiences.",
   },
   {
-    title: "Unique Concepts",
-    body: "Ten tour concepts — spiritual, heritage, sports, romantic, nature, business, MICE and more.",
+    icon: Globe2,
+    title: "Helpdesk in India",
+    body: "Dedicated regional support and liaison desk in India to assist travelers, pilgrim groups, and travel agents with seamless booking coordination.",
   },
   {
-    title: "Great Hospitality",
-    body: "Our ground team, drivers and partner hotels are chosen for warmth first, then for price.",
+    icon: Building2,
+    title: "Company Profile",
+    body: "AM Travel's Guru Lanka — an innovative Sri Lankan DMC developing 10 signature tourism concepts, bespoke itineraries, and trusted B2B partnerships.",
   },
 ];
 
@@ -138,21 +143,26 @@ function About() {
         </Reveal>
       </section>
 
-
       <section className="bg-sand-cream py-14 md:py-20">
         <div className="section-x">
           <Reveal>
             <h2 className="type-h2">Our Strength</h2>
           </Reveal>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            {VALUES.map((v, i) => (
-              <Reveal key={v.title} delay={i * 100}>
-                <div className="h-full rounded-2xl bg-white/70 p-6 shadow-sm">
-                  <h3 className="type-h3">{v.title}</h3>
-                  <p className="type-body mt-2 opacity-80">{v.body}</p>
-                </div>
-              </Reveal>
-            ))}
+            {VALUES.map((v, i) => {
+              const Icon = v.icon;
+              return (
+                <Reveal key={v.title} delay={i * 100}>
+                  <div className="h-full rounded-2xl border border-border/70 bg-card p-6 shadow-sm transition-all hover:border-spice-gold/60 hover:shadow-md">
+                    <div className="inline-flex items-center justify-center rounded-xl bg-ocean-teal/10 p-3 text-ocean-teal">
+                      <Icon className="size-6" />
+                    </div>
+                    <h3 className="type-h3 mt-4 text-ink">{v.title}</h3>
+                    <p className="type-body mt-2 text-muted-foreground">{v.body}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
