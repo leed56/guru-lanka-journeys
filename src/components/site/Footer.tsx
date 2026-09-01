@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Facebook, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import logo from "@/assets/am-logo.jpg.asset.json";
 import { BRAND, NAV } from "@/data/site";
@@ -7,7 +7,7 @@ import { BRAND, NAV } from "@/data/site";
 export function Footer() {
   return (
     <footer className="bg-ocean-teal text-sand-cream">
-      <div className="section-x grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
+      <div className="section-x grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1.2fr] md:py-20">
         <div>
           <div className="inline-block rounded-lg bg-background p-3">
             <img src={logo.url} alt={`${BRAND.name} logo`} className="h-12 w-auto" />
@@ -36,19 +36,42 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="type-caption opacity-70">Talk to us</p>
-          <ul className="mt-4 space-y-2 text-sm opacity-90">
-            <li>{BRAND.phone}</li>
-            <li>{BRAND.email}</li>
+          <p className="type-caption opacity-70">Contact Details</p>
+          <ul className="mt-4 space-y-2.5 text-sm opacity-90">
+            <li className="flex items-start gap-2">
+              <MapPin className="size-4 shrink-0 mt-0.5 text-spice-gold" />
+              <span>{BRAND.address}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone className="size-4 shrink-0 text-spice-gold" />
+              <span>{BRAND.phone} / {BRAND.phoneIntl}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail className="size-4 shrink-0 text-spice-gold" />
+              <span>{BRAND.email}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail className="size-4 shrink-0 text-spice-gold" />
+              <span>{BRAND.marketingEmail}</span>
+            </li>
           </ul>
           <div className="mt-5 flex gap-3">
-            <a href="https://facebook.com" aria-label="Facebook" className="rounded-full border border-sand-cream/30 p-2.5 transition-colors hover:border-spice-gold hover:text-spice-gold">
+            <a
+              href={BRAND.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="rounded-full border border-sand-cream/30 p-2.5 transition-colors hover:border-spice-gold hover:text-spice-gold"
+            >
               <Facebook className="size-4" />
             </a>
-            <a href="https://instagram.com" aria-label="Instagram" className="rounded-full border border-sand-cream/30 p-2.5 transition-colors hover:border-spice-gold hover:text-spice-gold">
-              <Instagram className="size-4" />
-            </a>
-            <a href={`https://wa.me/${BRAND.whatsapp}`} aria-label="WhatsApp" className="rounded-full border border-sand-cream/30 p-2.5 transition-colors hover:border-spice-gold hover:text-spice-gold">
+            <a
+              href={`https://wa.me/${BRAND.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="rounded-full border border-sand-cream/30 p-2.5 transition-colors hover:border-spice-gold hover:text-spice-gold"
+            >
               <MessageCircle className="size-4" />
             </a>
           </div>
@@ -57,7 +80,7 @@ export function Footer() {
 
       <div className="border-t border-sand-cream/15">
         <p className="section-x py-5 text-xs opacity-70">
-          © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
+          © {new Date().getFullYear()} {BRAND.name}. All rights reserved. • {BRAND.address}
         </p>
       </div>
     </footer>
