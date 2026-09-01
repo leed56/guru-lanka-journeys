@@ -9,13 +9,12 @@ export const BRAND = {
 };
 
 export const NAV = [
-  
-  { label: "About Us", to: "/about" },
-  { label: "Explore Map", to: "/explore" },
   { label: "Concepts", to: "/concepts" },
+  { label: "Explore Map", to: "/explore" },
   { label: "Packages", to: "/packages" },
   { label: "For Agents", to: "/for-agents" },
   { label: "For Partners", to: "/for-partners" },
+  { label: "About Us", to: "/about" },
   { label: "Contact", to: "/contact" },
 ] as const;
 
