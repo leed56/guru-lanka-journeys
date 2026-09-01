@@ -124,13 +124,10 @@ function AboutPage() {
             <h2 className="type-h2 mt-2 text-ink">What is AM Travel's Guru</h2>
             <div className="type-body mt-5 space-y-4 text-ink-soft">
               <p>
-                <strong>AM TRAVEL’S GURU LANKA</strong> is a newly launched Sri Lankan travel and tourism venture created with a clear
-                purpose — to introduce a smarter, more meaningful, and uniquely Sri Lankan way of experiencing travel.
+                <strong>AM TRAVEL’S GURU LANKA (PVT) LTD</strong> is the signature inbound tourism arm of <strong>AMCI GLOBAL VENTURES (PVT) LTD Group of Companies</strong>, created with a clear purpose — to introduce a smarter, more meaningful, and uniquely Sri Lankan way of experiencing travel.
               </p>
               <p>
-                We are developing a new generation of tourism concepts that blend Sri Lanka’s timeless traditions, rich
-                culture, spirituality, nature, hospitality, and heritage with innovative business models, modern travel
-                solutions, and carefully designed experiences.
+                Under the visionary motto <em>"Creating Opportunities • Empowering Communities • Connecting the World"</em> and driving towards <strong>"SMART SRI LANKA"</strong>, we develop next-generation travel solutions that blend timeless traditions, sacred spirituality, cricket culture, pristine nature, and genuine warmth with innovative business models and strategic banking partnerships.
               </p>
               <p className="text-base font-semibold text-ocean-teal">
                 Our vision is simple: to make every journey more than a trip — to make it a memorable experience.
