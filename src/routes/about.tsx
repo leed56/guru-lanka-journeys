@@ -770,9 +770,12 @@ function AboutPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="size-4 text-spice-gold" />
-                    <a href={`mailto:${BRAND.email}`} className="font-semibold text-ocean-teal hover:underline">
-                      {BRAND.email}
-                    </a>
+                    <div>
+                      <span className="text-2xs text-muted-foreground block font-semibold uppercase tracking-wider">India Desk Email</span>
+                      <a href={`mailto:${BRAND.indiaEmail}`} className="font-semibold text-ocean-teal hover:underline">
+                        {BRAND.indiaEmail}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

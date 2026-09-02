@@ -10,6 +10,7 @@ export const BRAND = {
   email: "info.marketing@amtravels.guru",
   marketingEmail: "info.marketing@amtravels.guru",
   operationEmail: "info.operation@amtravels.guru",
+  indiaEmail: "winnyatours@gmail.com",
   address: "165/09, Weboda South, Weboda, Kadawatha, Sri Lanka",
   facebook: "https://facebook.com/amtravelsguru",
 };

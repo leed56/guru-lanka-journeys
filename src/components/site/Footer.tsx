@@ -53,6 +53,10 @@ export function Footer() {
               <Mail className="size-4 shrink-0 text-spice-gold" />
               <a href={`mailto:${BRAND.operationEmail}`} className="hover:underline">{BRAND.operationEmail}</a>
             </li>
+            <li className="flex items-center gap-2">
+              <Mail className="size-4 shrink-0 text-spice-gold" />
+              <a href={`mailto:${BRAND.indiaEmail}`} className="hover:underline">India: {BRAND.indiaEmail}</a>
+            </li>
           </ul>
           <div className="mt-5 flex gap-3">
             <a

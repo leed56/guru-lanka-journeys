@@ -94,6 +94,15 @@ function Contact() {
               </a>
             </li>
             <li>
+              <a href={`mailto:${BRAND.indiaEmail}`} className="card-surface hover-lift flex items-center gap-3 p-5">
+                <Mail className="size-5 text-ocean-teal" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">India Helpdesk</span>
+                  <span className="text-sm font-semibold text-ink">{BRAND.indiaEmail}</span>
+                </div>
+              </a>
+            </li>
+            <li>
               <a
                 href={BRAND.facebook}
                 target="_blank"
