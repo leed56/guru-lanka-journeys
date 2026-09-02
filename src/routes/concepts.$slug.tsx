@@ -26,11 +26,13 @@ export const Route = createFileRoute("/concepts/$slug")({
     const collectionIndex = COLLECTIONS.findIndex((c) => c.slug === params.slug);
     if (collectionIndex === -1) throw notFound();
 
-    const collection = COLLECTIONS[collectionIndex];
-    const prevCollection =
-      collectionIndex > 0 ? COLLECTIONS[collectionIndex - 1] : COLLECTIONS[COLLECTIONS.length - 1];
-    const nextCollection =
-      collectionIndex < COLLECTIONS.length - 1 ? COLLECTIONS[collectionIndex + 1] : COLLECTIONS[0];
+    const collection = COLLECTIONS[collectionIndex]!;
+    const prevCollection = (collectionIndex > 0
+      ? COLLECTIONS[collectionIndex - 1]
+      : COLLECTIONS[COLLECTIONS.length - 1])!;
+    const nextCollection = (collectionIndex < COLLECTIONS.length - 1
+      ? COLLECTIONS[collectionIndex + 1]
+      : COLLECTIONS[0])!;
 
     return { collection, prevCollection, nextCollection, index: collectionIndex + 1 };
   },
