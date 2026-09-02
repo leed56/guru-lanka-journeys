@@ -53,9 +53,27 @@ const DURATIONS = ["3", "5", "7", "10", "14"];
 const PARTNERS = ["Hotels", "Villas", "Guides", "Drivers", "Restaurants", "Wellness", "Safari"];
 
 const TESTIMONIALS = [
-  { quote: "They rebuilt our route twice before we landed. It felt personal, not packaged.", name: "Marie & Tom", from: "France" },
-  { quote: "Our driver became the best part of the trip. Ten days, not one bad meal.", name: "Priya S.", from: "Singapore" },
-  { quote: "We asked for quiet. They gave us a coast we didn't know existed.", name: "The Ahmeds", from: "UAE" },
+  {
+    quote: "They rebuilt our route twice before we landed. It felt personal, not packaged.",
+    name: "Marie & Tom",
+    from: "France",
+    avatar: "/images/testimonials/marie-tom.jpg",
+    tour: "Romantic & Hill Country Trail",
+  },
+  {
+    quote: "Our driver became the best part of the trip. Ten days, not one bad meal.",
+    name: "Priya S.",
+    from: "Singapore",
+    avatar: "/images/testimonials/priya-singapore.jpg",
+    tour: "Spiritual & Heritage Pilgrimage",
+  },
+  {
+    quote: "We asked for quiet. They gave us a coast we didn't know existed.",
+    name: "The Ahmeds",
+    from: "UAE",
+    avatar: "/images/testimonials/the-ahmeds.jpg",
+    tour: "Nature & South Coast Escapes",
+  },
 ];
 
 function Home() {
@@ -266,13 +284,18 @@ function Home() {
                     </blockquote>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-border/60 flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-full bg-ocean-teal/10 text-ocean-teal font-bold text-sm">
-                      {t.name.split(" ").map((n) => n[0]).join("")}
-                    </div>
+                  <div className="mt-6 pt-4 border-t border-border/60 flex items-center gap-3.5">
+                    <img
+                      src={t.avatar}
+                      alt={`${t.name} from ${t.from}`}
+                      className="size-12 rounded-full object-cover border-2 border-spice-gold/40 shadow-xs shrink-0"
+                      loading="lazy"
+                    />
                     <div>
                       <figcaption className="text-sm font-bold text-ink">{t.name}</figcaption>
-                      <span className="text-xs text-muted-foreground">{t.from}</span>
+                      <span className="text-2xs text-muted-foreground block font-medium">
+                        {t.from} • <span className="text-ocean-teal">{t.tour}</span>
+                      </span>
                     </div>
                   </div>
                 </figure>
