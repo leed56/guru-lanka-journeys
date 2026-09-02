@@ -173,24 +173,38 @@ function Home() {
           <div className="mt-10 flex snap-x gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:overflow-visible">
             {COLLECTIONS.map((c, idx) => (
               <Reveal key={c.slug} delay={(idx % 4) * 90} className="w-[76vw] shrink-0 snap-start sm:w-[46vw] md:w-auto">
-                <article className="card-surface hover-lift flex h-full flex-col">
-                  {conceptImage(c.slug) ? (
-                    <div className="photo-zoom relative isolate aspect-[3/4] overflow-hidden bg-muted">
-                      <img
-                        src={conceptImage(c.slug)}
-                        alt={`${c.name} tour concept in Sri Lanka`}
-                        loading="lazy"
-                        className="photo-inner absolute inset-0 size-full object-cover"
-                      />
+                <article className="card-surface hover-lift group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border/80 bg-card shadow-sm transition-all duration-300 hover:border-spice-gold/60 hover:shadow-lg">
+                  <div>
+                    {conceptImage(c.slug) ? (
+                      <div className="relative isolate aspect-[3/4] w-full overflow-hidden bg-sand-cream/20">
+                        <img
+                          src={conceptImage(c.slug)}
+                          alt={`${c.name} tour concept poster`}
+                          loading="lazy"
+                          className="photo-inner absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    ) : (
+                      <Placeholder label={`${c.name} Tour Concept`} ratio="aspect-[3/4]" />
+                    )}
+
+                    <div className="p-5">
+                      <div className="flex items-center justify-between border-b border-border/60 pb-2.5">
+                        <span className="rounded-full bg-ocean-teal/10 px-2.5 py-0.5 text-2xs font-bold uppercase tracking-wider text-ocean-teal">
+                          Concept {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <span className="text-2xs font-semibold text-tea-green">
+                          {c.days}
+                        </span>
+                      </div>
+                      <h3 className="type-h3 mt-2.5 text-ink group-hover:text-ocean-teal transition-colors line-clamp-1">{c.name}</h3>
+                      <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-2">{c.line}</p>
                     </div>
-                  ) : (
-                    <Placeholder label={`${c.name} Tour Concept`} />
-                  )}
-                  <div className="flex flex-1 flex-col p-5">
-                    <h3 className="type-h3">{c.name}</h3>
-                    <p className="mt-2 flex-1 text-sm text-muted-foreground">{c.line}</p>
-                    <Link to="/concepts/$slug" params={{ slug: c.slug }} className="btn-outline mt-5 text-ocean-teal">
-                      More info
+                  </div>
+
+                  <div className="px-5 pb-5 pt-0">
+                    <Link to="/concepts/$slug" params={{ slug: c.slug }} className="btn-outline w-full text-ocean-teal hover:border-ocean-teal hover:bg-ocean-teal hover:!text-sand-cream text-xs !py-2.5 flex items-center justify-center gap-1.5 font-bold transition-all">
+                      More Info &amp; Gallery <ArrowRight className="size-3.5" />
                     </Link>
                   </div>
                 </article>

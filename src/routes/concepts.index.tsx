@@ -91,33 +91,33 @@ function ConceptsListingPage() {
               <Reveal key={c.slug} delay={(idx % 4) * 80}>
                 <article className="card-surface hover-lift group flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border/80 bg-card shadow-sm transition-all duration-300 hover:border-spice-gold/60 hover:shadow-lg">
                   <div>
-                    {/* Artwork Container */}
-                    <div className="relative isolate aspect-[3/4] overflow-hidden bg-muted">
+                    {/* Artwork Container - Standardized 3:4 Aspect Ratio without overlapping badge */}
+                    <div className="relative isolate aspect-[3/4] w-full overflow-hidden bg-sand-cream/20">
                       {coverUrl ? (
                         <img
                           src={coverUrl}
-                          alt={`${c.name} tour concept card`}
+                          alt={`${c.name} tour concept poster`}
                           loading="lazy"
                           className="photo-inner absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       ) : (
                         <Placeholder label={`${c.name} Tour Concept`} ratio="aspect-[3/4]" />
                       )}
-
-                      {/* Number Pill Overlay */}
-                      <div className="absolute left-3 top-3 rounded-full bg-ocean-teal/90 px-3 py-1 text-2xs font-bold uppercase tracking-wider text-sand-cream shadow-md backdrop-blur-xs">
-                        Concept {String(idx + 1).padStart(2, "0")}
-                      </div>
                     </div>
 
-                    {/* Content */}
+                    {/* Content Section with Aligned Metadata Header */}
                     <div className="p-5">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-tea-green">
-                        <Calendar className="size-3.5" />
-                        <span>{c.days} Itinerary</span>
+                      <div className="flex items-center justify-between border-b border-border/60 pb-3">
+                        <span className="rounded-full bg-ocean-teal/10 px-2.5 py-0.5 text-2xs font-bold uppercase tracking-wider text-ocean-teal">
+                          Concept {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <div className="flex items-center gap-1.5 text-2xs font-semibold text-tea-green">
+                          <Calendar className="size-3" />
+                          <span>{c.days}</span>
+                        </div>
                       </div>
 
-                      <h3 className="type-h3 mt-2 text-ink group-hover:text-ocean-teal transition-colors">
+                      <h3 className="type-h3 mt-3 text-ink group-hover:text-ocean-teal transition-colors line-clamp-1">
                         {c.name}
                       </h3>
 
