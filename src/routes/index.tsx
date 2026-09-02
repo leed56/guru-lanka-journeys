@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Quote, Star } from "lucide-react";
+import { ArrowRight, Mail, MessageCircle, Phone, Quote, Sparkles, Star } from "lucide-react";
 
 import climatesAsset from "@/assets/Nine_climates_in_one_island.jpg.asset.json";
 import citiesAsset from "@/assets/2_000_years_of_cities.jpg.asset.json";
@@ -301,6 +301,78 @@ function Home() {
                 </figure>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* QUICK CONTACT & DIRECT EMAIL CHANNELS */}
+      <section className="bg-ocean-teal py-16 text-sand-cream md:py-24">
+        <div className="section-x">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
+            <Reveal>
+              <div className="inline-flex items-center gap-2 rounded-full border border-sand-cream/25 bg-sand-cream/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-spice-gold">
+                <Sparkles className="size-3.5" />
+                Get in Touch With a Travel Guru
+              </div>
+              <h2 className="type-h2 mt-4 text-sand-cream">
+                Ready to Plan Your Sri Lankan Journey?
+              </h2>
+              <p className="type-body mt-4 max-w-xl text-sand-cream/90 leading-relaxed">
+                Whether you need a custom pilgrimage trail, an exciting cricket tour, a luxury beach escape, or B2B agent tariffs, our travel specialists are ready to assist you.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link to="/journey" className="btn-gold !px-7 !py-3 font-semibold shadow-sm">
+                  Start My Journey <ArrowRight className="size-4" />
+                </Link>
+                <a
+                  href={`https://wa.me/${BRAND.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline !border-sand-cream/40 !px-7 !py-3 font-semibold !text-sand-cream hover:!bg-sand-cream/15 flex items-center gap-2"
+                >
+                  <MessageCircle className="size-4 text-tea-green" /> Chat on WhatsApp
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <div className="rounded-3xl border border-sand-cream/20 bg-sand-cream/10 p-6 md:p-8 backdrop-blur-xs space-y-5">
+                <h3 className="type-h3 text-sand-cream">Direct Email &amp; Contact Desks</h3>
+
+                <div className="space-y-4 text-sm">
+                  <a
+                    href={`mailto:${BRAND.marketingEmail}`}
+                    className="flex items-start gap-3 rounded-2xl bg-sand-cream/10 p-4 border border-sand-cream/15 hover:border-spice-gold transition-all"
+                  >
+                    <Mail className="size-5 text-spice-gold shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-2xs font-bold uppercase tracking-wider text-sand-cream/70 block">
+                        Marketing &amp; General Inquiries
+                      </span>
+                      <span className="font-semibold text-sand-cream text-base">{BRAND.marketingEmail}</span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`mailto:${BRAND.operationEmail}`}
+                    className="flex items-start gap-3 rounded-2xl bg-sand-cream/10 p-4 border border-sand-cream/15 hover:border-spice-gold transition-all"
+                  >
+                    <Mail className="size-5 text-spice-gold shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-2xs font-bold uppercase tracking-wider text-sand-cream/70 block">
+                        Operations &amp; Travel Logistics
+                      </span>
+                      <span className="font-semibold text-sand-cream text-base">{BRAND.operationEmail}</span>
+                    </div>
+                  </a>
+
+                  <div className="flex items-center gap-3 pt-2 text-xs text-sand-cream/80 font-medium">
+                    <Phone className="size-4 text-spice-gold" />
+                    <span>Hotline / WhatsApp: <strong>{BRAND.phone}</strong> ({BRAND.phoneIntl})</span>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
