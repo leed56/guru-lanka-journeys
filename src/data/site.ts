@@ -7,8 +7,9 @@ export const BRAND = {
   phoneIntl: "+94 77 055 5471",
   whatsapp: "94770555471",
   whatsappDisplay: "0770555471",
-  email: "info@amtravelsguru.com",
-  marketingEmail: "marketing@amtravelsguru.com",
+  email: "info.marketing@amtravels.guru",
+  marketingEmail: "info.marketing@amtravels.guru",
+  operationEmail: "info.operation@amtravels.guru",
   address: "165/09, Weboda South, Weboda, Kadawatha, Sri Lanka",
   facebook: "https://facebook.com/amtravelsguru",
 };

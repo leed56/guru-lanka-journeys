@@ -76,20 +76,20 @@ function Contact() {
               </a>
             </li>
             <li>
-              <a href={`mailto:${BRAND.email}`} className="card-surface hover-lift flex items-center gap-3 p-5">
+              <a href={`mailto:${BRAND.marketingEmail}`} className="card-surface hover-lift flex items-center gap-3 p-5">
                 <Mail className="size-5 text-spice-gold" />
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">General Inquiries</span>
-                  <span className="text-sm font-semibold text-ink">{BRAND.email}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">Marketing &amp; Inquiries</span>
+                  <span className="text-sm font-semibold text-ink">{BRAND.marketingEmail}</span>
                 </div>
               </a>
             </li>
             <li>
-              <a href={`mailto:${BRAND.marketingEmail}`} className="card-surface hover-lift flex items-center gap-3 p-5">
+              <a href={`mailto:${BRAND.operationEmail}`} className="card-surface hover-lift flex items-center gap-3 p-5">
                 <Mail className="size-5 text-spice-gold" />
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">Marketing &amp; B2B</span>
-                  <span className="text-sm font-semibold text-ink">{BRAND.marketingEmail}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block">Operations &amp; Travel</span>
+                  <span className="text-sm font-semibold text-ink">{BRAND.operationEmail}</span>
                 </div>
               </a>
             </li>

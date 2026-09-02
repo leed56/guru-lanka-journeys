@@ -47,11 +47,11 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Mail className="size-4 shrink-0 text-spice-gold" />
-              <span>{BRAND.email}</span>
+              <a href={`mailto:${BRAND.marketingEmail}`} className="hover:underline">{BRAND.marketingEmail}</a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="size-4 shrink-0 text-spice-gold" />
-              <span>{BRAND.marketingEmail}</span>
+              <a href={`mailto:${BRAND.operationEmail}`} className="hover:underline">{BRAND.operationEmail}</a>
             </li>
           </ul>
           <div className="mt-5 flex gap-3">

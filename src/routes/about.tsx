@@ -904,15 +904,15 @@ function AboutPage() {
                     <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Official Emails</h3>
                     <div className="mt-1 space-y-1">
                       <p className="text-sm font-semibold text-ink">
-                        General Inquiries:{" "}
-                        <a href={`mailto:${BRAND.email}`} className="text-ocean-teal hover:underline">
-                          {BRAND.email}
+                        Marketing &amp; Inquiries:{" "}
+                        <a href={`mailto:${BRAND.marketingEmail}`} className="text-ocean-teal hover:underline">
+                          {BRAND.marketingEmail}
                         </a>
                       </p>
                       <p className="text-sm font-semibold text-ink">
-                        Marketing &amp; B2B:{" "}
-                        <a href={`mailto:${BRAND.marketingEmail}`} className="text-ocean-teal hover:underline">
-                          {BRAND.marketingEmail}
+                        Operations &amp; Travel:{" "}
+                        <a href={`mailto:${BRAND.operationEmail}`} className="text-ocean-teal hover:underline">
+                          {BRAND.operationEmail}
                         </a>
                       </p>
                     </div>
