@@ -72,7 +72,7 @@ export function EnquiryForm({
 
     // Construct Mailto URI
     const subject = encodeURIComponent(
-      `[New Listing Enquiry] ${data.business || data.company || formTitle} — AM Travel's Guru`
+      `[New Listing Enquiry] ${data["business"] || data["company"] || formTitle} — AM Travel's Guru`
     );
     const body = encodeURIComponent(formatEmailBody(data));
     const mailtoUri = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
@@ -95,7 +95,7 @@ export function EnquiryForm({
 
   if (done) {
     const emailSubject = encodeURIComponent(
-      `[New Listing Enquiry] ${submittedData.business || submittedData.company || formTitle} — AM Travel's Guru`
+      `[New Listing Enquiry] ${submittedData["business"] || submittedData["company"] || formTitle} — AM Travel's Guru`
     );
     const emailBody = encodeURIComponent(formatEmailBody(submittedData));
     const mailtoHref = `mailto:${recipientEmail}?subject=${emailSubject}&body=${emailBody}`;
